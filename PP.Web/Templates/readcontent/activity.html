@@ -1,0 +1,79 @@
+﻿<span id="aktivitet" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell activity">
+
+    <div class="col-lg-12">
+
+        <div class="row">
+            <div class="col-lg-12 activity">
+                <h2>
+                    6. Aktivitet
+                </h2>
+            </div>
+            <div class="toolbar-tab">
+                <a class="activity"><span ng-click="showToolbar('comments', 'activity')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-2 col-sm-2 bold">Namn</div>
+                    <div class="col-md-2 col-sm-2 bold">Status</div>
+                    <div class="col-md-2 col-sm-2 bold">Intern tid (tim)</div>
+                    <div class="col-md-2 col-sm-2 bold">Extern tid (tim)</div>
+                    <div class="col-md-2 col-sm-2 bold">Kostnad (tkr)</div>
+                    <div class="col-md-2 col-sm-2 bold">Summa (tkr)</div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12" id="activity-table">
+                <div class="row" ng-repeat="item in project.Activity track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="col-md-2 col-sm-2 read readOnly"><div class="textarea-container"><input type="text" ng-model="item.Name" disabled /></div></div>
+                        <div class="col-md-2 col-sm-2 readOnly">
+                            <div class="textarea-container">
+                                {{getstatus(item)}}
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.InternalHours" disabled /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.ExternalHours" disabled /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.Cost" disabled /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.SummaryRow}}</div></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="col-md-7 col-sm-7 col-sm-offset-2 col-md-offset-2 read">
+                                <div class="textarea-container">
+                                    <textarea rows="1" msd-elastic="\n" ng-model="item.Notes" disabled></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-sm-offset-2 col-md-offset-2 read">
+                <div class="col-md-2 col-sm-2 bold pleft">
+                    Summa:
+                </div>
+                <div class="col-md-2 col-sm-2 bold" style="padding-left:13px">
+                    {{project.Activity.SummaryInternalHours}}
+                </div>
+                <div class="col-md-2 col-sm-2 bold" style="padding-left:13px">
+                    {{project.Activity.SummaryExternalHours}}
+                </div>
+                <div class="col-md-1 col-sm-1 bold" style=" padding-left:22px">
+                    {{project.Activity.SummaryCost }}
+                </div>
+                <div class="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1 bold" style=" padding-left:27px">
+                    {{project.Activity.SummaryTotal}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

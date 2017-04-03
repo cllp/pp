@@ -1,0 +1,22 @@
+﻿<div class="row" style="z-index:100000">
+    <div>
+        <div style="background: #7d0ae1; height: 30px; width: 30px; float: left; margin: 5px 2px;"></div>
+        <div style="background: #0bafec; height: 30px; width: 30px; float: left; margin: 5px 2px;"></div>
+        <div style="background: #f15a0b; height: 30px; width: 30px; float: left; margin: 5px 2px;"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 contentview">
+        <h2>Projekt {{ErrorInfo.projectName}} kan ej visas.</h2>
+        <p>
+            Detta kan bero på att du läsbehörighet och att projektet inte är publicerat<br />
+            Vänligen kontakta projektledare för projektet.
+        </p>
+        <p>
+            <ul>
+                <li ng-repeat="leader in ErrorInfo.projectManagers"><a href="mailto:{{leader.Email}}" target="_top">{{leader.Email}}</a> </li>
+            </ul>
+        </p>
+
+    </div>
+</div>

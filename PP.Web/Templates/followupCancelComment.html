@@ -1,0 +1,20 @@
+﻿<div class="content modal-dialog" style="top:{{topDistance}}px">
+    <div class="modal-content col-md-12" style="width:650px;">
+
+        <div class="modal-body" ng-controller="FollowupController">
+            <form name="cancelationForm">
+                <label class="label-status" translate>Makuleringskommentar </label>
+                <div class="textarea-container">
+                    <textarea bordermouseover rows="3" class="comment" placeholder="Skriv kommentar..." ng-model="$parent.modalCommentField" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <span style="float:left;" ng-show="cancelationForm.$error.required">Vänligen fyll i makuleringskommentar</span>
+                    <button type="button" class="btn btn-default" ng-click="$hide()">Avbryt</button> <button type="button" class="btn btn-primary" ng-click="$hide();closeModal(modalCommentField)" ng-disabled="!cancelationForm.$valid">Fortsätt</button>
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+</div>

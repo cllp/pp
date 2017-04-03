@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Projektplaneraren</title>
+        <meta charset="UTF-8">
+        <link href="./css/main.css" rel="stylesheet" />
+        <script type='text/javascript' src="js/settings.js"></script>
+        <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+        <script type='text/javascript' src="lib/jquery/jquery.validate.min.js"></script>
+        <script type='text/javascript' src="lib/jquery/jquery.xdomainrequest.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top"></div>
+        <div class="container main-container">
+            <div class="row" style="margin-top:70px;">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="col-md-12">
+                        <div style="padding-bottom:40px;">
+                            <div style="background: #7d0ae1; height: 30px; width: 30px; float: left; margin: 0 5px 0 0"></div>
+                            <div style="background: #0bafec; height: 30px; width: 30px; float: left; margin: 0 5px 0 0; "></div>
+                            <div style="background: #f15a0b; height: 30px; width: 30px; float: left; margin: 0 5px 0 0; "></div>
+                            <div style="height: 30px;"><h3>Projektplaneraren</h3></div>
+                        </div>
+                    </div>
+                    
+     				<div class="col-md-10">
+     					<hr />
+                        <div class="clickheader"> <h4>Registrering</h4></div>
+                    </div>
+                    <div class="col-md-10">
+                    	Ange namn och e-postadress nedan för att registrera dig. När du registrerat dig så skickas ett e-postmeddelande till den angivna epostadressen med inloggningsinformation.
+                    </div>
+
+                    <div class="loginForm col-md-8">
+                        <div class="col-md-8">
+                            
+                           </div>
+                            <!--<form id="registerform" role="form">-->
+                            	<div class="form-group">
+                                    <label class="label-status">Namn</label>
+                                    <input type="name" id="name" class="form-control" onblur="validateName()" placeholder="Fyll i namn" required><span id="nameValidationMessage" class="validationMessage">* Ange namn (minst 4 tecken)</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-status">E-post</label>
+                                    <input type="email" id="email" class="form-control" onblur="validateEmail()" placeholder="Fyll i epost" required><span id="emailValidationMessage" class="validationMessage">* Var god fyll i en godkänd e-postadress</span>
+                                </div>
+                                <!--<div class="form-group">
+                                    <label class="label-status">Lösenord</label>
+                                    <input type="password" id="password1" class="form-control" placeholder="Fyll i lösenord">
+                                </div>
+                                 <div class="form-group">
+                                    <label class="label-status">Repetera lösenord</label>
+                                    <input type="password" id="password2" class="form-control" placeholder="repetera lösenord">
+                                </div>-->
+                                <div class="form-group">
+                                	<button class="btn btn-sm btn-primary pull-left" onclick="Register();">Registrera</button>
+                                    <button class="btn btn-sm btn-link pull-left" onclick="window.location = '/'">Tillbaka till inloggning</button>
+                                       
+                                </div>
+                           <!-- </form>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+
+        var apiRoot = appConfig.apiUrl; //ApiUrl();
+
+        $("#nameValidationMessage").hide();
+        $("#emailValidationMessage").hide();
+
+        $("#registerform").validate({
+
+            // Specify the validation rules
+            rules: {
+                name: {
+                    minlength: 4,
+                    required: true
+                },
+                email: {
+                    minlength: 4,
+                    required: true,
+                    email: true
+                }/*,
+                password1: {
+                    required: true
+                },
+                password2: {
+                    required: true
+                }*/
+            },
+
+            // Specify the validation error messages
+            messages: {
+                /*password1: {
+                    required: "Vänligen fyll i lösenord"
+                },
+                password2: {
+                    required: "Vänligen repetera löserord"
+                },*/
+                email: {
+                    required: "Vänligen fyll i din epostadress"
+                },
+                name: {
+                    required: "Vänligen fyll i ditt namn"
+                },
+                minlength: {
+                    required: "Vänligen fyll i din epostadress"
+                },
+            }
+        });
+
+         //$("#registerform").submit(function(e) {
+
+         function validate () {
+         	if(validateName() && validateEmail()) {
+         		return true;
+         	} else {
+         		return false;
+         	}
+
+         }
+
+ 		function Register() {
+
+ 			if(validate()) {
+ 			var message = '';
+
+        	$.ajax({
+	             url: apiRoot + 'account/register/',
+	             secureuri: false,
+	             method: 'POST',
+	             dataType: 'json',
+	             headers: {
+	               'Content-Type': 'application/x-www-form-urlencoded'
+	             },
+	             data: {
+	               'Email': $('#email').val(),
+	               'Name': $('#name').val()
+	             },
+	             success: function(data) {
+
+	             	switch(data.Status) {
+				    case 'Ok':
+				        message = 'Registreringen lyckades, ett meddelande har skickats ut till din epostadress med instruktioner och inloggningsuppgifter';
+				        break;
+				    case 'AlreadyExists':
+				        message = 'Epostadressen finns redan registrerad i systemet. Vänligen logga in eller återställ ditt lösenord om du glömt bort det';
+				        break;
+					case 'NoDomainMatch':
+				        message = 'Epostadressen tillhör ingen registrerad domän, registreringen misslyckades';
+				        break;
+				    case 'Error':
+				        message = 'Registreringen misslyckades. Kontakta din administratör för mer information';
+				        break;
+				    default:
+				    	message = 'Registreringen misslyckades. Kontakta din administratör för mer information';
+				}
+
+					$('#email').val('');
+					$('#name').val('');
+
+					alert(message);
+	             },
+	             error: function(data) {
+	             	alert(data.message);
+	             	console.log(data.Status);
+	               alert('Registreringen misslyckades. Kontakta din administratör för mer information');
+	             }
+
+
+	           });
+
+				} else {
+					console.log('validation error');
+					alert('Var god kontrollera namn och e-postadress');
+				}
+
+			/*if ($("#registerform").valid()) {
+	           
+	          console.log('valid');
+            } else {
+            	console.log('not valid');
+            }*/
+        };
+
+         function validateEmail() { 
+                var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                var valid = re.test($('#email').val());
+
+				console.log($('#email').val() + ': ' + valid);
+
+				if(!valid) {
+                	
+	                if($('#email').val().length < 1) {
+	                	//hide validation message
+	                	$("#emailValidationMessage").hide();
+	                } else {
+	                	$("#emailValidationMessage").show();
+	                }
+                } else {
+                	$("#emailValidationMessage").hide();
+                }
+
+                return valid;
+            }; 
+
+            function validateName() {                 
+                var valid = $('#name').val().length > 3;
+                console.log($('#name').val() + ': ' + valid);
+
+                if(!valid) {
+
+	                if($('#name').val().length < 1) {
+	                	$("#nameValidationMessage").hide();
+	                } else {
+	                	$("#nameValidationMessage").show();
+	                }
+				} else {
+                	$("#nameValidationMessage").hide();
+                }
+
+                return valid;
+            };
+
+        jQuery.extend(jQuery.validator.messages, {
+            required: "Obligatoriskt fält.",
+            email: "Vänligen fyll i giltig epostadress.",
+            minlength: "Vänligen fyll i fält"
+        });
+
+    </script>
+
+
+</body>
+</html>

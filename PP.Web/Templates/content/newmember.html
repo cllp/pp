@@ -1,0 +1,125 @@
+
+
+<div class="content modal-dialog" style="{{modalPosition()}}" id="memberModal">
+<!-- <div class="content modal-dialog" style="position: absolute; top: 50%; left: 30%;"> -->
+	
+    <div class="modal-content col-md-12" style="height: 420px; width:620px;">
+
+        <div class="modal-body col-lg-12 col-md-12 col-sm-12">
+
+        	<h3 ng-if="!isEditMember && !memberSaved">Lägg till ny medlem</h3>
+        	<h3 ng-if="isEditMember">Ändra medlem</h3>
+
+          	<!-- selectedUser == null -->
+			<div class="row" ng-if="selectedUser == null && !memberSaved">
+
+				<div class="col-sm-12 col-md-12">
+					<label class="label-status" translate>Sök efter namn eller epost</label>
+		         	<div mouseover class="textarea-container">
+		           		<input type="text" ng-model="search.text" ng-change="searchUsers()" placeholder="Sök efter användare">
+		            </div>
+	    		</div>
+	    	</div>
+
+	    	<div class="row" ng-if="memberSaved && selectedUser == null && !newUser && search.text == null">
+				<div class="col-sm-12 col-md-12">
+					<span>Användare&nbsp;sparades,&nbsp;<button type="button" style="padding:0;" class="btn btn-link" ng-click="resetSearchMember()">klicka&nbsp;här&nbsp;för&nbsp;att&nbsp;göra en ny&nbsp;sökning</button></span>
+	    		</div>
+	    	</div>
+
+	    	<div class="row" ng-if="!newUser && selectedUser == null">
+	    		<div class="col-sm-12 col-md-12" style="padding-left:15px; padding-top:20px;">
+
+					<div ng-if="users.length > 0">
+			        	<div ng-repeat="user in users" style="padding-left:5px;"><a ng-click="selectUser(user)">{{user.Name}}&nbsp;({{user.Organization}})</a>&nbsp;<a class="fa fa-info-sign" ng-click="selectUser(user)"></a></div>
+					</div>
+
+					<div ng-if="users.length < 1 && search.text.length > 0">
+						Ingen användare hittades. <a ng-click="createNewUser()">Klicka här för att bjuda in</a>.
+					</div>
+				</div>
+			</div>
+
+			<!-- newUser == null -->
+			<div ng-if="newUser">
+				<div class="bleft row" style="padding-left:15px;">
+		    		<div class="col-sm-12 col-md-12">
+						Ange namn och e-postadress för användaren nedan, en bekräftelse kommer att skickas till angiven epost-adress.
+					</div>
+				</div>
+
+				<div class="row">
+		    		<div class="col-sm-6 col-md-6">
+						
+						<label class="label-status" translate>Namn</label>
+							<div mouseover class="textarea-container">
+		                    	<input type="text" ng-model="selectedUser.Name" placeholder="Ange namn" ng-change="validateUser()" required />
+		                    </div>
+					</div>
+
+		             <div class="col-sm-6 col-md-6">
+		             	<label class="label-status" translate>E-post</label>
+		                <div mouseover class="textarea-container">
+		             		<input type="text" ng-model="selectedUser.Email" placeholder="Ange epost" ng-change="validateUser()" />
+		        		</div>
+		           	</div>
+		            
+		        </div>
+		        
+		        <div class="row">
+					<div class="col-sm-12 col-md-12">
+						<div><label class="label-status">Organisation</label> 
+							<div style="padding-left:5px;">
+								<span ng-if="selectedUser.Organization == null"> Extern, användaren tillhör ingen känd organisation i Projektplaneraren.</span>
+								<span ng-if="selectedUser.Organization != null"> {{selectedUser.Organization}} (<b>{{selectedUser.Domain}}</b>)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+
+						<label class="label-status" translate>Välj organisation</label>
+		                <div mouseover class="textarea-container">
+		             		<select ng-model="selectedUser.OrganizationId" placeholder="Välj organisation" ng-options="p.Id as p.Name for p in Organizations" ng-change="validateOrganization()"></select>
+						</div>
+
+					</div>
+				</div>
+				-->
+
+			</div> <!-- selectedUser == null -->
+
+			<div class="row" ng-if="selectedUser != null || newUser">
+					<div class="col-sm-12 col-md-12">
+						<label class="label-status" translate>Lägg till projektroll</label>
+		              	<div mouseover class="textarea-container">
+		             		<pp-select-roles id="newProjectRoleMultiselect" optionsmodel="ProjectRoles" change="changeProjectRole()" model="selectedUser.MemberRoles" label="" currentitem="selectedUser" placeholder="Tilldela roll" accesstype="write">
+							</pp-select-roles>
+		            	</div>
+	     			</div>
+			</div>
+
+			<div style="padding-top:40px; padding-left:5px;" ng-if="selectedUser != null || newUser">
+				<div class="row">
+			       	<div class="col-sm-12 col-md-12">
+			       		<b>{{selectedUser.Name}}</b>&nbsp;{{selectedUser.Email}}
+			       	</div>
+			    </div>
+			
+			    <div class="row">
+			    	<div class="col-sm-7 col-md-7">{{newMemberMessage}}</div>
+			       	<div class="col-sm-5 col-md-5">
+			        	<button type="button" style="padding:0;" class="btn btn-link" ng-click="saveMember()" ng-disabled="!memberValid">Spara&nbsp;medlem</button>&nbsp;
+			        	<button type="button" class="btn btn-link" ng-click="resetSearchMember()">Ny&nbsp;sökning</button>
+			        </div>
+			 		<!--<div class="col-sm-2 col-md-2">
+			   			
+			     	</div>-->
+				</div>
+			</div>
+    </div>
+</div>
+</div>

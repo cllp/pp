@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8E120BD-4025-4953-BB6D-3B12A1463EBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PP.Core</RootNamespace>
+    <AssemblyName>PP.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Local|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Local\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.12.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Dapper.1.13\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\DapperIgnoreAttribute.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\InMemoryCache.cs" />
+    <Compile Include="Context\IdentityContext.cs" />
+    <Compile Include="Context\IIdentity.cs" />
+    <Compile Include="Exceptions\ExceptionBase.cs" />
+    <Compile Include="Exceptions\IException.cs" />
+    <Compile Include="Exceptions\RepositoryException.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\DapperExtensions.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Helpers\EnvironmentHelper.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\LinqExtensions.cs" />
+    <Compile Include="Helpers\SerializableDictionary.cs" />
+    <Compile Include="Helpers\SqlHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\TextHelper.cs" />
+    <Compile Include="Interfaces\IReportRepository.cs" />
+    <Compile Include="Interfaces\ICommentRepository.cs" />
+    <Compile Include="Interfaces\IProjectRepository.cs" />
+    <Compile Include="Interfaces\IContentRepository.cs" />
+    <Compile Include="Helpers\XmlSerializer.cs" />
+    <Compile Include="Interfaces\IAppRepository.cs" />
+    <Compile Include="Interfaces\ILog.cs" />
+    <Compile Include="Interfaces\IModel.cs" />
+    <Compile Include="Interfaces\ISerializer.cs" />
+    <Compile Include="Logic\PermissionLogic.cs" />
+    <Compile Include="Logic\ProjectCalculationLogic.cs" />
+    <Compile Include="Log\DatabaseLog.cs" />
+    <Compile Include="Model\Enum\ActiveState.cs" />
+    <Compile Include="Model\Enum\LogLevel.cs" />
+    <Compile Include="Model\Enum\OrganizationState.cs" />
+    <Compile Include="Model\Enum\Permission.cs" />
+    <Compile Include="Model\Enum\PermissionSection.cs" />
+    <Compile Include="Model\Enum\ProgramType.cs" />
+    <Compile Include="Model\Enum\ProjectType.cs" />
+    <Compile Include="Model\Enum\RegisterUserStatus.cs" />
+    <Compile Include="Model\Enum\RiskAnalysisLevel.cs" />
+    <Compile Include="Model\Enum\UpdateSection.cs" />
+    <Compile Include="Model\Enum\Phase.cs" />
+    <Compile Include="Model\Enum\Risk.cs" />
+    <Compile Include="Model\Enum\Role.cs" />
+    <Compile Include="Model\ErrorCode.cs" />
+    <Compile Include="Model\Extensions\ProjectExtension.cs" />
+    <Compile Include="Model\Interface\IProject.cs" />
+    <Compile Include="Model\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Model\Partial\NewUser.cs" />
+    <Compile Include="Model\Partial\PasswordChange.cs" />
+    <Compile Include="Model\Partial\ProgramRoleAdministration.cs" />
+    <Compile Include="Model\Partial\ProgramTypeModel.cs" />
+    <Compile Include="Model\Partial\ProjectArea.cs" />
+    <Compile Include="Model\Partial\ProjectFollowUp.cs" />
+    <Compile Include="Model\Partial\ProjectMember.cs" />
+    <Compile Include="Model\Partial\ProjectMemberView.cs" />
+    <Compile Include="Model\Partial\ProjectRisk.cs" />
+    <Compile Include="Model\Partial\ProjectRole.cs" />
+    <Compile Include="Model\Partial\ProjectVersion.cs" />
+    <Compile Include="Model\Partial\Project.cs" />
+    <Compile Include="Model\Partial\ProjectRoleView.cs" />
+    <Compile Include="Model\Partial\UnreadProjectComment.cs" />
+    <Compile Include="Model\UpdateProjectRoleResult.cs" />
+    <Compile Include="Model\Partial\UserView.cs" />
+    <Compile Include="Model\ProjectPermission.cs" />
+    <Compile Include="Model\ProjectView.cs" />
+    <Compile Include="Model\Update.cs" />
+    <Compile Include="Model\Variance.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CoreFactory.cs" />
+    <Compile Include="Repository\ReportRepository.cs" />
+    <Compile Include="Repository\AppRepositoryMock.cs" />
+    <Compile Include="Repository\AppRepository.cs" />
+    <Compile Include="Repository\CommentRepository.cs" />
+    <Compile Include="Repository\ProjectRepository.cs" />
+    <Compile Include="Repository\RepositoryBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Model\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

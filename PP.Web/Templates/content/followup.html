@@ -1,0 +1,85 @@
+<span id="uppfoljning" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell followup">
+    <div class="col-lg-12">
+
+        <div class="row">
+            <div class="col-lg-12 followup">
+                <h2>
+                    7. Uppföljning
+                </h2>
+            </div>
+            <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+                <p ng-click="showHelpText('followup')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreambleFollowup | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+            </div>
+            <div class="toolbar-tab">
+                <a class="followup"><span ng-click="showToolbar('comments', 'followup')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+        <div class="row tableView">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-3 col-sm-2 bold">Datum</div>
+                    <div class="col-md-2 col-sm-3 bold">Intern tid (tim)</div>
+                    <div class="col-md-2 col-sm-2 bold">Extern tid (tim)</div>
+                    <div class="col-md-2 col-sm-2 bold">Övrigt (tkr)</div>
+                    <div class="col-md-1 col-sm-1 bold">Summa (tkr)</div>
+                    <div class="col-md-1 col-sm-1 bold" style="padding-left:10px;">Saldo  (tkr)</div>
+                    <div class="col-md-1 col-sm-1 bold">Hantera</div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12" id="followupList">
+                <div class="row" id="followupRow{{$index}}" ng-repeat="item in project.FollowUp track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div class="col-md-12 col-sm-12" ng-if='!item.isSaved'>
+                        <div class="col-md-3 col-sm-2 pleft">
+                            <div class="textarea-container">
+                                {{item.Date | date:'yyyy-MM-dd'}}
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.InternalHours" ng-change="enableSave(true, item)" /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.ExternalHours" ng-change="enableSave(true, item)" /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.OtherCosts" ng-change="enableSave(true, item)" /></div></div>
+                        <div class="col-md-1 col-sm-1"><div class="textarea-container">{{item.RowTotalCost}}</div></div>
+                        <div class="col-md-1 col-sm-1"><div class="textarea-container"><input type="text" disabled ng-model="item.RowActivityTotal" /></div></div>
+                        <div ng-show="!item.showSave" class="col-md-1 col-sm-1"><button type="button" class="btn btn-link" ng-click="deleteRow($index)"><small>Ta bort</small></button></div>
+                        <div ng-show="item.showSave" class="col-md-1 col-sm-1"><button type="button" class="btn btn-link" ng-click="saveRow($index)"><small>Spara</small></button></div>
+                    </div>
+                    <div class="col-md-12 col-sm-12" ng-if='item.isSaved'>
+                        <div class="col-md-3 col-sm-2 pleft">
+                            <div class="textarea-container">
+                                <span ng-class="{'canceledItem': item.Canceled}">{{item.Date | date:'yyyy-MM-dd'}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3"><div class="textarea-container"><input type="text" ng-class="{'canceledItem': item.Canceled}" ng-model="item.InternalHours" ng-disabled="item.isSaved" /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-class="{'canceledItem': item.Canceled}" ng-model="item.ExternalHours" ng-disabled="item.isSaved" /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.OtherCosts" ng-class="{'canceledItem': item.Canceled}" ng-change="enableSave(true, item)" ng-disabled="item.isSaved" /></div></div>
+                        <div class="col-md-1 col-sm-1"><div class="textarea-container" ng-class="{'canceledItem': item.Canceled}">{{item.RowTotalCost}}</div></div>
+                        <div class="col-md-1 col-sm-1"><div class="textarea-container"><input type="text" disabled ng-class="{'canceledItem': item.Canceled}" ng-model="item.RowActivityTotal" /></div></div>
+                        <div ng-show="!item.showSave && !item.Canceled" class="col-md-1 col-sm-1"><button type="button" class="btn btn-link" ng-click="openModal($index, item)" data-template="templates/followupCancelComment.html" container="body" bs-modal="followUpModal"><small>Makulera</small></button></div>
+                        <div ng-show="!item.showSave && item.Canceled" class="col-md-1 col-sm-1"><span>Makulerad</span></div>
+                        <div ng-show="item.showSave" class="col-md-1 col-sm-1"><button type="button" class="btn btn-link" ng-click="saveRow($index, 'save')"><small>Spara</small></button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="col-md-6 col-sm-6 col-sm-offset-2 col-md-offset-3 ">
+                                <div class="textarea-container" bordermouseover ng-if="!item.Canceled">
+                                    <textarea enter rows="1" placeholder="Skriv kommentar..." msd-elastic="\n" ng-model="item.Notes" ng-change="enableSave(true, item)"></textarea>
+                                </div>
+                                <div class="textarea-container" ng-if="item.Canceled">
+                                    <textarea enter rows="1" msd-elastic="\n" ng-model="item.Notes" ng-disabled="item.Canceled"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="options">
+                        <button type="button" class="btn btn-link" ng-click="addRow()"><small>Lägg till ny uppföljning</small></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

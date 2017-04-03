@@ -1,0 +1,52 @@
+﻿<div class="versions sidebarScrollContent" ng-controller="VersionlistController">
+
+    <div id="about" class="nano">
+        <div class="nano-content">
+            <div ng-if="!readOnly">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="bold">Publicera ny version</h4>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 publishVersion">
+                    <div>
+                        <div>
+                            <label class="label-status">Versionskommentar</label>
+                            <div mouseover class="textarea-container">
+                                <textarea msd-elastic="\n" ng-model="newVersion.Comment" rows="1" placeholder="Fyll i kommentar..." />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="margin-top:10px;">
+                        <button ng-click="publish(newVersion)" class="btn btn-orange" style="float: right;">Publicera</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="bold">Publicerade versioner</h4>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12" style="margin-top:25px;padding-right:40px;">
+                    <div class="row" ng-repeat="item in versions">
+                        <div class="col-md-12 col-sm-12 versionList">
+                            <div class="row">
+                                <div class="table-list" ng-click="redirectVersion(item.Id)" data-template="templates/version.html" container="body" bs-modal="modal">
+
+                                    <span class="col-sm-8 bold">{{item.PublishedDate | date:'yyyy-MM-dd HH:mm'}}</span>&nbsp;{{item.Phase}}
+                                    <span class="col-sm-12">
+                                        <small>{{item.Comment}}</small>
+                                    </span>
+                                    <span class="col-sm-8 bold"><small>{{item.PublishedByName}} </small></span>
+                                </div>
+                                <div style="padding-bottom:5px;">
+                                    <span class="pdf_link_small"><a href="{{apiurl}}pdf/{{item.ProjectId}}.{{item.Id}}.pdf" target="_self" download="{{item.ProjectId}}.{{item.Id}}.pdf" style="min-width:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

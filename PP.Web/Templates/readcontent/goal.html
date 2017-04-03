@@ -1,0 +1,62 @@
+﻿<span id="malgoal" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell goal read">
+
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12 members">
+                <h2>
+                    5. Mål
+                </h2>
+            </div>
+            <div class="toolbar-tab">
+                <a class="members"><span ng-click="showToolbar('comments', 'members')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="row" ng-repeat="item in project.Goals track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div>
+                        <div class="col-md-3 col-sm-2">
+                            <span class="bold">Måltyp</span>
+                            <div class="textarea-container">
+                                {{getGoalType(item)}}
+                            </div>
+                        </div>                      
+                        <div class="col-md-3 col-sm-2">
+                            <span class="bold">Uppnått</span>
+                            <div class="textarea-container">
+                                {{getGoalAchieved(item)}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 read">
+                            <div class="col-md-6 col-sm-6 col-sm-offset-2 col-md-offset-3">
+                                <span class="bold">Målformulering:</span>
+                                <div class="textarea-container">
+                                    <textarea rows="1" msd-elastic="\n" ng-model="item.GoalDefinition" disabled></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 read">
+                            <div class="col-md-6 col-sm-6 col-sm-offset-2 col-md-offset-3">
+                                <span class="bold">Mätmetod: </span>
+                                <div class="textarea-container">
+                                    <textarea rows="1" msd-elastic="\n" ng-model="item.MesaureMethod" disabled></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

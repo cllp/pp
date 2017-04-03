@@ -1,0 +1,7 @@
+﻿[
+{ 'Id': 1, Name: 'Skolbudget', Description: 'Beskrivning projekt skolbudget', Area: 'Område 1', Phase: '1' },
+{ 'Id': 2, Name: 'Planering av lekplatser', Description: 'Beskrivning projekt planering av lek', Area: 'Område 1', Phase: '2' },
+{ 'Id': 3, Name: 'Sammordning av inköp', Description: 'Beskrivning projekt', Area: 'Område 1', Phase: '1' },
+{ 'Id': 4, Name: 'Atraktiv kommun', Description: 'Beskrivning projekt atraktiv', Area: 'Område 1', Phase: '3' },
+{ 'Id': 5, Name: 'För och med invånarna', Description: 'Beskrivning projekt invånarna', Area: 'Område 1', Phase: '4' }
+]

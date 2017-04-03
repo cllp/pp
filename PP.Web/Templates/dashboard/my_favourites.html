@@ -1,0 +1,57 @@
+﻿<div ng-controller="AllprojectsController">
+    <div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-md-4 searchInput">
+                    <input type="text" class="form-control" ng-model="MyFavouritesSearchText" placeholder="Sök...">
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+            </div>
+            <div class="row projectlist">
+                <div class="row ">
+                    <div class="col-md-1 col-sm-1"></div>
+                    <div class="col-md-11 col-sm-11 row">
+                        <div class="col-md-3 col-sm-3 bold">
+                            <span class="tableheader" ng-click="MyFavouritesOrderByField='Name'; MyFavouritesReverseSort = !MyFavouritesReverseSort">
+                                Namn
+                            </span>
+                        </div>
+                        <div class="col-md-3 col-sm-3 bold">
+                            <span class="tableheader" ng-click="MyFavouritesOrderByField='Area'; MyFavouritesReverseSort = !MyFavouritesReverseSort">
+                                Område
+                            </span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 bold">
+                            <span class="tableheader" ng-click="MyFavouritesOrderByField='Phase'; MyFavouritesReverseSort = !MyFavouritesReverseSort">
+                                Projektfas
+                            </span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 bold">
+                            <span class="tableheader" ng-click="MyFavouritesOrderByField='Municipality'; MyFavouritesReverseSort = !MyFavouritesReverseSort">
+                                Kommun
+                            </span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 bold">
+                            <span class="tableheader" ng-click="MyFavouritesOrderByField='County'; MyFavouritesReverseSort = !MyFavouritesReverseSort">
+                                Län
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row table-list" ng-repeat="item in projectView | orderBy:MyFavouritesOrderByField:MyFavouritesReverseSort | filter:{Phase:'!Arkiverad', Active: true} | filter:isFavourite | filter:myFilter" ng-class-odd=" 'odd' " ng-class-even=" 'even' ">
+                    <div class=" col-md-1 col-sm-1"><i class="glyphicon glyphicon-star" ng-click="removeFromFavourites($index,item)"></i></div>
+                    <div class="col-md-11 col-sm-11" ng-click="redirect(item.Id)">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="textarea-container">{{item.Name}}</div>
+                        </div>
+                        <div class="col-md-3 col-sm-3"><div class="textarea-container">{{item.Area}}</div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.Phase}}</div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.Municipality}}</div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.County}}</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

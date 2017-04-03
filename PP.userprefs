@@ -1,0 +1,45 @@
+﻿<Properties StartupConfiguration="{93EB5656-6BF6-48F6-B744-ED2782E063CD}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PP.Api/App_Start/Startup.Auth.cs">
+    <Files>
+      <File FileName="PP.Api/Helpers/ExcelGenerator.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Helpers/ITextReplace.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Helpers/ObjectTextTrim.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Helpers/TextReplace.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Filters/ExceptionFilter.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Controllers/AccountController.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Attributes/ApiAuthorizeAttribute.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Mapper/ProjectCommentMapper.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Providers/SimpleAuthorizationServerProvider.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Templates/NewUser.html" Line="1" Column="1" />
+      <File FileName="PP.Core/CoreFactory.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Repository/AppRepository.cs" Line="29" Column="22" />
+      <File FileName="PP.Core/Model/Model.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Model/Partial/NewUser.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Model/Interface/IProject.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Model/Extensions/ProjectExtension.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Logic/PermissionLogic.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Logic/ProjectCalculationLogic.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Log/DatabaseLog.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Interfaces/ILog.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Helpers/EnumHelper.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Helpers/DateTimeHelper.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Helpers/DapperExtensions.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Helpers/EnvironmentHelper.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Helpers/JsonHelper.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Helpers/LinqExtensions.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Helpers/SqlHelper.cs" Line="34" Column="30" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/4.8.0/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="1937" Column="5" />
+      <File FileName="PP.Core/Context/IIdentity.cs" Line="1" Column="1" />
+      <File FileName="PP.Core/Context/IdentityContext.cs" Line="1" Column="1" />
+      <File FileName="PP.Api/Startup.cs" Line="13" Column="21" />
+      <File FileName="PP.Api/App_Start/Startup.Auth.cs" Line="39" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.PP.Api PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

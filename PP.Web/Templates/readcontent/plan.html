@@ -1,0 +1,151 @@
+﻿<span id="plan" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell plan">
+
+    <div class="col-lg-12">
+
+        <div class="row">
+            <div class="col-lg-12 plan">
+                <h2>
+                    4. Projektplan
+                </h2>
+            </div>
+            <div class="toolbar-tab">
+                <a class="plan"><span ng-click="showToolbar('comments', 'plan')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+        <div class="row">
+            
+            <section id="projectplan_introduction">
+                <div class="row">
+                    <h3>Introduktion</h3>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Bakgrund och syfte</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.IntroductionBackground" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Definitioner</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.IntroductionDefinition" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Övriga kommentarer</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.IntroductionComments" disabled></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_description">
+                <div class="row">
+                    <h3>Beskrivning</h3>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Omfattning</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.DescriptionExtent" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Avgränsning</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.DescriptionDelimitation" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Förvaltning och Drift</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.DescriptionManagement" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Avslutning och Utvärdering</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.DescriptionEvaluation" disabled></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_implementation">
+                <div class="row">
+                    <h3>Genomförande</h3>
+                </div>
+
+                <div class="row">
+                    <label class="label-status" translate>Genomförande</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.ImplementationDescription" disabled></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_communication">
+                <div class="row">
+                    <h3>Kommunikation</h3>
+                </div>
+
+                <div class="row">
+                    <label class="label-status" translate>Intressentanalys</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.CommunicationInterestAnalysis" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Kommunikationsplan</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.CommunicationPlan" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Övriga kommentarer</label>
+                    <div  class="textarea-container">
+                        <textarea rows="1" msd-elastic="\n" ng-model="project.CommunicationDefinition" disabled></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_riskassessment">
+                <div class="row">
+                    <h3>Riskanalys</h3>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="col-md-3 col-sm-3 bold">Namn</div>
+                            <div class="col-md-3 col-sm-2 bold">Sannolikhet</div>
+                            <div class="col-md-3 col-sm-2 bold">Konsekvens</div>
+                            <div class="col-md-3 col-sm-3 bold">Påverkan/Riskpoäng</div>                            
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="row" ng-repeat="item in project.Risks track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                            <div class="col-md-3 col-sm-3"><div class="textarea-container"><input type="text" ng-model="item.Name" disabled /></div></div>
+                            <div class="col-md-3 col-sm-2">
+                                <div class="textarea-container">
+                                   {{getProbability(item)}}
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-2">
+                                <div class="textarea-container" border>
+                                    {{getConsequence(item)}}
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3"><div class="textarea-container"><label class="label-status">{{item.Effect}}</label></div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+</div>

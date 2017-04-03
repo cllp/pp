@@ -1,0 +1,49 @@
+﻿<!-- <div ng-controller="AdministratorController"> -->
+<div>
+    <div class="col-lg-12">
+        <div ng-if="includeUserEdit">
+            <div ng-include='"Templates/administration/userAdministration-edit.html"'></div>
+        </div>
+        <div class="row" ng-show="!includeUserEdit">
+            <div class="col-md-4 searchInput">
+                <input type="text" class="form-control" ng-model="MembersSearchText" placeholder="Sök...">
+                <i class="glyphicon glyphicon-search"></i>
+            </div>
+        </div>
+        <div class="row projectlist" ng-if="!includeUserEdit">
+            <div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-3 col-sm-3 bold ">
+                        <span class="tableheader" ng-click="memberSortField='Name'; memberReverseSort = !memberReverseSort">
+                            Namn
+                        </span>
+                    </div>
+                    <div class="col-md-5 col-sm-5 bold">
+                        <span class="tableheader" ng-click="memberSortField='Email'; memberReverseSort = !memberReverseSort">
+                            E-post
+                        </span>
+                    </div>
+                    <div class="col-md-2 col-sm-2 bold">
+                        <span class="tableheader" ng-click="memberSortField='Organization'; memberReverseSort = !memberReverseSort">
+                            Organisation
+                        </span>
+
+                    </div>
+                    <div class="col-md-2 col-sm-2 bold" style="padding-left: 28px;">
+                        <span class="tableheader" ng-click="memberSortField='County'; memberReverseSort = !memberReverseSort">
+                            Län
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row table-list" ng-repeat="item in userListAdministration | orderBy:memberSortField:memberReverseSort | filter: MembersSearchText" ng-class="{'table-list-current': selectedProject(item), '': !selectedProject(item)}" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div class="col-md-12 col-sm-12" id="{{item.Name}}" ng-click="editUser($index, item)">
+                    <div class="col-md-3 col-sm-3"><div class="textarea-container">{{item.Name}}</div></div>
+                    <div class="col-md-5 col-sm-5"><div class="textarea-container">{{item.Email}}</div></div>
+                    <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.Organization}}</div></div>
+                    <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.County}}</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projektplaneraren</title>
+    <link href="./css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top"></div>
+
+
+    <div class="container main-container">
+
+
+        <div class="row" style="margin-top:70px;">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div style="background: #7d0ae1; height: 15px; width: 15px; float: left; margin: 0 2px;"></div>
+                <div style="background: #0bafec; height: 15px; width: 15px; float: left; margin: 0 2px; "></div>
+                <div style="background: #f15a0b; height: 15px; width: 15px; float: left; margin: 0 2px; "></div>
+                <div>&nbsp;</div>
+                <h3>Projektplaneraren uppgraderas</h3>
+                <p>Välkommen tillbaka på tisdag den 24:e Juni</p>
+            </div>
+            <div class="col-lg-3"></div>
+
+        </div>
+        </div>
+</body>
+</html>
+

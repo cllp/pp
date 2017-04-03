@@ -1,0 +1,54 @@
+﻿@import "base";
+
+#navbar {
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+#navbar .navbar-inner {
+    margin-bottom: 0;
+    background-color: #555;
+    background-repeat: repeat-x;
+    border: 0;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e52e31', endColorstr='#222222', GradientType=0);
+    .linear-gradient(top, #414141, #595959);
+    .border-radius(0);
+}
+
+    #navbar .brand {
+        float: right;
+    }
+
+    #navbar .brand, .navbar .nav > li > a {
+        color: #fff;
+        .no-text-shadow;
+    }
+
+    #navbar .nav-collapse .nav > li > a:hover, .nav-collapse .dropdown-menu a:hover {
+        background-color: #414141;
+        color: #fff;
+        .box-shadow(0 3px 8px, rgba(0,0,0, .125) inset);
+    }
+
+    #navbar .nav > .active > a, #navbar .nav > .active > a:hover, #navbar .nav > .active > a:focus {
+        background-color: #414141;
+        color: #fff;
+        text-decoration: none;
+        .box-shadow(0 3px 8px, rgba(0,0,0, .125) inset);
+    }
+
+    #navbar .divider-vertical {
+        border: 0;
+        margin: 0;
+        border-left: 1px solid #313131;
+    }
+
+#navbar .container {
+    max-width: 1280px;
+    margin: 0 auto;
+}

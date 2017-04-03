@@ -1,0 +1,53 @@
+<span id="finansiering" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell finance">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12 finance">
+                <h2>
+                    2. Finansiering
+                </h2>
+            </div>
+            <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+                <p ng-click="showHelpText('finance')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreambleFinance | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+            </div>
+            <div class="toolbar-tab">
+                <a class="finance"><span ng-click="showToolbar('comments', 'finance')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+
+        <div class="row tableView">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="col-lg-2 col-sm-2">
+                    <div data-type="info" data-animation="am-fade-and-scale" bs-tooltip="tooltip">Uppskattat<i class="glyphicon glyphicon-upload" style="margin-left:5px" ng-click="getFundingEstimate()"></i> </div>
+                    <div>
+                        <div class="textarea-container" id="FundingEstimate"  ng-class="{'input-changed': dataCollected}" bordermouseover><input type="text" ng-blur="saveData('FundingEstimate', project.FundingEstimate)" ng-model="project.FundingEstimate" /></div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    Egen finansiering
+                    <div class="textarea-container" id="FundingActual" bordermouseover><input type="text" ng-blur="saveData('FundingActual', project.FundingActual)" ng-model="project.FundingActual" /></div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    Extern finansiering
+                    <div class="textarea-container" id="FundingExternal" bordermouseover><input type="text" ng-blur="saveData('FundingExternal', project.FundingExternal)" ng-model="project.FundingExternal" /></div>
+                </div>
+
+                <div class="col-lg-2 col-sm-2" ng-if="StimulusEdit!=0">
+                    Stimulansmedel
+                    <div class="textarea-container" id="FundingStimulus" bordermouseover ng-if="StimulusEdit==2">
+                        <input type="text" ng-blur="saveData('FundingStimulus', project.FundingStimulus)" ng-model="project.FundingStimulus" />
+                    </div>
+                    <div class="textarea-container" id="FundingStimulus" ng-if="StimulusEdit==1">
+                        <input type="text" disabled ng-model="project.FundingStimulus" />
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    Ofinansierat
+                    <div class="textarea-container"> {{rootscopeFunding.unfinanced}}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

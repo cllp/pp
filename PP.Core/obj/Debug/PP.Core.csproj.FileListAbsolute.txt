@@ -1,0 +1,9 @@
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/bin/Debug/PP.Core.dll
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/bin/Debug/PP.Core.dll.mdb
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/bin/Debug/Dapper.dll
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/bin/Debug/Newtonsoft.Json.dll
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/bin/Debug/Dapper.xml
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/bin/Debug/Newtonsoft.Json.xml
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/obj/Debug/PP.Core.csprojResolveAssemblyReference.cache
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/obj/Debug/PP.Core.dll
+/Users/cllp/dev/PP and BlueApp/projektplaneraren/PP.Core/obj/Debug/PP.Core.dll.mdb

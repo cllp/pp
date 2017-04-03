@@ -1,0 +1,18 @@
+﻿<div ng-controller="SidebarController">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div id="container" class="sidebar-container">
+                <div id="left"><a ng-click="changeTab(previousTab);" class="fa fa-chevron-left"></a></div>
+                <div id="right"><a ng-click="changeTab(nextTab);" class="fa fa-chevron-right"></a></div>
+                <div id="center">
+                    <strong>
+                        {{activeTab.title}}
+                    </strong>
+                    <b ng-if="activeTab.commentable == true && TotalUnreadProjectComments > 0" data-notifications="{{TotalUnreadProjectComments}}"></b>
+                </div>
+            </div>
+
+            <div ng-include="activeTab.template" style="padding-top:10px;"></div>
+        </div>
+    </div>
+</div>

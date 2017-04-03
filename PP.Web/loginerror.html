@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projektplaneraren</title>
+    <link href="./css/main.css" rel="stylesheet" />
+    <script type="text/javascript" data-app-id="H1cTD5Z2p7GuY9RHSSggSw" src="https://assets.yammer.com/assets/platform_js_sdk.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top"></div>
+    <div class="container main-container">
+        <div class="row" style="margin-top:70px;">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h1>Något blev fel vid inloggningen</h1>
+                <p><a href="/index.html">Klicka här för att logga in igen</a></p>
+            </div>
+            <div class="col-lg-3"></div>
+            <span id="yammer-login"></span>
+            <script>
+                yam.getLoginStatus(function (response) {
+
+                    if (response.authResponse) {
+
+                        console.log('logging out from yammer');
+
+                        //logout from Yammer
+                        yam.logout(function (response) {
+                            console.log("user was logged out from yammer");
+                        });
+                        
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>

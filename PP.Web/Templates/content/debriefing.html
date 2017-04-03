@@ -1,0 +1,27 @@
+<span id="avrapportering" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell plan">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12 plan">
+                <h2>
+                    8. Avrapportering
+                </h2>
+            </div>
+            <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+                <p ng-click="showHelpText('debriefing')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreambleDebriefing | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+            </div>
+            <div class="toolbar-tab">
+                <a class="debriefing"><span ng-click="showToolbar('comments', 'debriefing')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+        <div class="col-lg-12">
+        <div class="bleft row">
+            <label class="label-status" translate></label>
+            <div mouseover id="Debriefing" class="textarea-container">
+                <textarea rows="1" ng-blur="saveData('Debriefing', project.Debriefing)" msd-elastic="\n" ng-model="project.Debriefing"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

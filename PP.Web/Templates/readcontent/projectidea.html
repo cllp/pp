@@ -1,0 +1,76 @@
+﻿<span id="projektide" class="content-cell-head-anchor">&nbsp;</span>
+<div class="row contentcell projectidea">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <h2>
+            {{project.Name}}
+        </h2>
+        <div class="bleft row">
+            <div class="col-sm-3 col-md-3">
+                <label class="label-status">Program</label>
+                <div class="textarea-container">
+                    {{programName}}
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+                <label class="label-status">Projektområde</label>
+                <div class="textarea-container">
+                    {{projectAreaName}}
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+                <label class="label-status">Ansvarig kommun</label>
+                <div  class="textarea-container">
+                    {{OrganizationName}}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label class="label-status">Projektfas</label>
+                <div class="textarea-container">
+                   {{Phase}}
+                </div>
+            </div>
+        </div>
+        <div class="bleft row">
+            <div class="col-sm-3 col-md-3">
+                <label class="label-status">Projektidé skapad av</label>
+                <div class="textarea-container">
+                    {{project.CreatedBy}}
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+                <label class="label-status">Publicerad</label>
+                <div class="textarea-container">
+                    {{publishDate}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="row">
+            <div style="float:left;" class="col-lg-12 projectidea">
+                <h2>                    
+                   1. Projektidé
+                </h2>
+
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="bleft row">
+                <div class="col-sm-3 col-md-3">
+                    <label class="label-status" translate>Startdatum </label>
+                    <div class="textarea-container-read">
+                        {{project.StartDate | date:'yyyy-MM-dd'}}
+                    </div>
+                </div>
+            </div>
+            <div class="bleft row">
+                <div class="col-sm-12 col-md-12">
+                    <label class="label-status" translate>Beskrivning </label>
+                    <div class="textarea-container" style="border: none; padding: 5px;">
+                        <textarea rows="1" ng-blur="saveData('projectcontent.Description',projectcontent.Description)" msd-elastic="\n" ng-model="project.Description" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

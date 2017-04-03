@@ -1,0 +1,580 @@
+﻿<div class="content modal-dialog">
+    <div class="modal-content col-md-12">
+        <div class="modal-body" ng-controller="VersionController">
+            <div class="row" style="z-index:100000">
+                <div class="col-md-11">
+                    <div style="background: #444444; height: 30px; width: 30px; float: left; margin: 5px 2px;"></div>
+                    <div style="background: #858585; height: 30px; width: 30px; float: left; margin: 5px 2px;"></div>
+                    <div style="background: #7F7F7F; height: 30px; width: 30px; float: left; margin: 5px 2px;"></div>
+                </div>
+                <div><a class="col-md-1 pdf_link" href="{{apiurl}}pdf/{{version.Data.Id}}.{{version.Id}}.pdf" target="_self" download="{{version.Data.Id}}.{{version.Id}}.pdf"></a></div>
+            </div>
+            <div class="row">
+                <!--setting the (expanded / collapsed) classes for margin on the content sides-->
+                <div class="col-lg-12">
+                    <h2>{{version.Data.Name}}</h2>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="bleft row">
+                            <div class="col-sm-3 col-md-3">
+                                <label class="label-status">Program</label>
+                                <div class="textarea-container-read">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-3">
+                                <label class="label-status">Projektområde</label>
+                                <div class="textarea-container-read">
+                                    {{projectAreaName}}
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-3">
+                                <label class="label-status">Ansvarig kommun</label>
+                                <div class="textarea-container-read">
+                                    {{OrganizationName}}
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="label-status">Projektfas</label>
+                                <div class="textarea-container-read"><span>{{version.Data.Phase}}</span></div>
+                            </div>
+                        </div>
+                        <div class="bleft row">
+                            <div class="col-sm-3 col-md-3">
+                                <label class="label-status">Projektidé skapad av</label>
+                                <div class="textarea-container-read">
+                                    {{project.CreatedBy}}
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-3">
+                                <label class="label-status">Publicerad</label>
+                                <div class="textarea-container-read">
+                                    <span>{{version.PublishedDate | date:'yyyy-MM-dd'}}</span>, {{version.PublishedByName}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bleft row">
+                            <div class="col-sm-3 col-md-3">
+                                <label class="label-status">Projektägare</label>
+                                <div class="textarea-container-read">
+                                    <div class="textarea-container-readList" ng-repeat="owner in ProjectOwners">
+                                        {{owner.Name}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-3">
+                                <label class="label-status">Projektledare</label>
+                                <div class="textarea-container-read">
+                                    <div class="col-md-12" ng-repeat="leader in ProjectLeaders">
+                                        {{leader.Name}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- start project idea-->
+
+
+                    <div class="row contentcell">
+                        <div class="col-lg-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="bleft row">
+                                    <div class="col-sm-3 col-md-3">
+                                        <label class="label-status" translate>Startdatum </label>
+                                        <div class="textarea-container-read">
+                                            {{version.Data.StartDate | date:'yyyy-MM-dd'}}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bleft row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <label class="label-status" translate>Beskrivning </label>
+                                        <div class="textarea-container" style="border: none; padding: 5px;">
+                                            <textarea rows="1" ng-blur="saveData('version.Data.Description',projectcontent.Description)" msd-elastic="\n" ng-model="version.Data.Description" disabled></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end project idea-->
+                    <!-- start finance-->
+
+                    <div class="row contentcell">
+
+                        <div class="col-lg-12">
+
+                            <div class="row">
+                                <div style="float:left;" class="col-lg-12 ">
+                                    <h2>
+                                        Finansiering
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="col-lg-2 col-sm-2">
+                                        <div data-type="info" data-animation="am-fade-and-scale"> Uppskattat (tkr) </div>
+                                        <div>
+                                            <div class="textarea-container">{{version.Data.FundingEstimate}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-sm-2">
+                                        Egen finansiering (tkr)
+                                        <div class="textarea-container">{{version.Data.FundingActual}}</div>
+                                    </div>
+                                    <div class="col-lg-2 col-sm-2">
+                                        Extern finansiering (tk)
+                                        <div class="textarea-container">{{version.Data.FundingExternal}}</div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-sm-2" ng-if='rootscopeIsStimulusAuthorized'>
+                                        Stimulansmedel (tkr)
+                                        <div class="textarea-container">{{version.Data.FundingStimulus}}</div>
+                                    </div>
+                                    <div class="col-lg-2 col-sm-2">
+                                        Ofinansierat (tkr)
+                                        <div class="textarea-container"> {{rootscopeFunding.unfinanced}}</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--end finance-->
+                    <!-- start members-->
+
+
+                    <div class="row contentcell ">
+
+                        <div class="col-lg-12">
+
+                            <div class="row">
+                                <div class="col-lg-12 ">
+                                    <h2>
+                                        Medlemmar
+                                    </h2>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="col-md-3 col-sm-2 bold">Namn</div>
+                                        <div class="col-md-3 col-sm-3 bold">E-post</div>
+                                        <div class="col-md-3 col-sm-2 bold">Kommun</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="row" ng-repeat="item in version.Data.Members track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="col-md-3 col-sm-2 readOnly"><div class="textarea-container readOnly" style="padding-left:0">{{item.Name}}</div></div>
+                                            <div class="col-md-3 col-sm-3 readOnly"><div class="textarea-container readOnly">{{item.Email}}</div></div>
+                                            <div class="col-md-3 col-sm-2 readOnly"><div class="textarea-container readOnly">{{item.Municipality}}</div></div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="col-md-7 col-sm-7 col-sm-offset-2 col-md-offset-3">
+                                                    <span class="bold">Roll:</span>
+                                                    <div class="textarea-container">
+                                                        <span ng-repeat="role in MemberRoles"> {{role.Name}},</span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end members-->
+                    <!-- start plan-->
+
+                    <div class="row contentcell ">
+
+                        <div class="col-lg-12">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>
+                                        Projektplan
+                                    </h2>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="row">
+
+                                    <section id="projectplan_introduction">
+                                        <div class="row">
+                                            <h3>Introduktion</h3>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Bakgrund och syfte</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.IntroductionBackground" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Definitioner</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.IntroductionDefinition" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Övriga kommentarer</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.IntroductionComments" disabled></textarea>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section id="projectplan_description">
+                                        <div class="row">
+                                            <h3>Beskrivning</h3>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Omfattning</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.DescriptionExtent" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Avgränsning</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.DescriptionDelimitation" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Förvaltning och Drift</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.DescriptionManagement" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Avslutning och Utvärdering</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.DescriptionEvaluation" disabled></textarea>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section id="projectplan_implementation">
+                                        <div class="row">
+                                            <h3>Genomförande</h3>
+                                        </div>
+
+                                        <div class="row">
+                                            <label class="label-status" translate>Genomförande</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.ImplementationDescription" disabled></textarea>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section id="projectplan_communication">
+                                        <div class="row">
+                                            <h3>Kommunikation</h3>
+                                        </div>
+
+                                        <div class="row">
+                                            <label class="label-status" translate>Intressentanalys</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.CommunicationInterestAnalysis" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Kommunikationsplan</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.CommunicationPlan" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="label-status" translate>Övriga kommentarer</label>
+                                            <div class="textarea-container">
+                                                <textarea rows="1" msd-elastic="\n" ng-model="version.Data.CommunicationDefinition" disabled></textarea>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section id="projectplan_riskassessment">
+                                        <div class="row">
+                                            <h3>Riskanalys</h3>
+                                        </div>
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="col-md-3 col-sm-3 bold">Namn</div>
+                                                    <div class="col-md-3 col-sm-2 bold">Sannolikhet</div>
+                                                    <div class="col-md-3 col-sm-2 bold">Konsekvens</div>
+                                                    <div class="col-md-3 col-sm-3 bold">Påverkan/Riskpoäng</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="row" ng-repeat="item in version.Data.Risks track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                                                    <div class="col-md-3 col-sm-3"><div class="textarea-container"><input type="text" ng-model="item.Name" disabled /></div></div>
+                                                    <div class="col-md-3 col-sm-2">
+                                                        <div class="textarea-container">
+                                                            {{getProbability(item)}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-2">
+                                                        <div class="textarea-container" border>
+                                                            {{getConsequence(item)}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3"><div class="textarea-container"><label class="label-status" translate>{{item.Effect}}</label></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </section>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end plan-->
+                    <!-- start goal-->
+
+
+                    <div class="row contentcell read">
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>
+                                        Mål
+                                    </h2>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="col-md-3 col-sm-2 bold">Måltyp</div>
+                                        <div class="col-md-3 col-sm-2 bold">Namn</div>
+                                        <div class="col-md-3 col-sm-2 bold">Uppnått</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="row" ng-repeat="item in version.Data.Goals track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                                        <div>
+                                            <div class="col-md-3 col-sm-2">
+                                                <div class="textarea-container">
+                                                    {{getGoalType(item)}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.Name" disabled /></div></div>
+                                            <div class="col-md-3 col-sm-2">
+                                                <div class="textarea-container">
+                                                    {{getGoalAchieved(item)}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 read">
+                                                <div class="col-md-6 col-sm-6 col-sm-offset-2 col-md-offset-3">
+                                                    <span class="bold">Målformulering:</span>
+                                                    <div class="textarea-container">
+                                                        <textarea rows="1" msd-elastic="\n" ng-model="item.GoalDefinition" disabled></textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 read">
+                                                <div class="col-md-6 col-sm-6 col-sm-offset-2 col-md-offset-3">
+                                                    <span class="bold">Mätmetod: </span>
+                                                    <div class="textarea-container">
+                                                        <textarea rows="1" msd-elastic="\n" ng-model="item.MesaureMethod" disabled></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- end goal-->
+                    <!-- start project activity-->
+                    <div class="row contentcell">
+
+                        <div class="col-lg-12">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>
+                                        Aktivitet
+                                    </h2>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="col-md-2 col-sm-2 bold">Namn</div>
+                                        <div class="col-md-2 col-sm-2 bold">Status</div>
+                                        <div class="col-md-2 col-sm-2 bold">Intern tid (tim)</div>
+                                        <div class="col-md-2 col-sm-2 bold">Extern tid (tim)</div>
+                                        <div class="col-md-2 col-sm-2 bold">Kostnad (tkr)</div>
+                                        <div class="col-md-2 col-sm-2 bold">Summa (tkr)</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12" id="activity-table">
+                                    <div class="row" ng-repeat="item in version.Data.Activity track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="col-md-2 col-sm-2 read readOnly"><div class="textarea-container"><input type="text" ng-model="item.Name" disabled /></div></div>
+                                            <div class="col-md-2 col-sm-2 readOnly">
+                                                <div class="textarea-container">
+                                                    {{getstatus(item)}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.InternalHours" disabled /></div></div>
+                                            <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.ExternalHours" disabled /></div></div>
+                                            <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.Cost" disabled /></div></div>
+                                            <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.SummaryRow}}</div></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="col-md-7 col-sm-7 col-sm-offset-2 col-md-offset-2 read">
+                                                    <span class="bold">
+                                                        Kommentar:
+                                                    </span>
+                                                    <div class="textarea-container">
+                                                        <textarea rows="1" msd-elastic="\n" ng-model="item.Notes" disabled></textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-sm-offset-2 col-md-offset-2 read">
+                                    <div class="col-md-2 col-sm-2 bold pleft">
+                                        Summa:
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 bold" style="padding-left:13px">
+                                        {{version.Data.Activity.SummaryInternalHours}}
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 bold" style="padding-left:13px">
+                                        {{version.Data.Activity.SummaryExternalHours}}
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 bold" style=" padding-left:22px">
+                                        {{version.Data.Activity.SummaryCost }}
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1 bold" style=" padding-left:26px">
+                                        {{version.Data.Activity.SummaryTotal}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End project activity-->
+                    <!-- start followup-->
+
+
+                    <div class="row contentcell">
+                        <div class="col-lg-12">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>
+                                        Uppföljning
+                                    </h2>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="col-md-3 col-sm-2 bold">Datum</div>
+                                        <div class="col-md-2 col-sm-3 bold">Intern tid (tim)</div>
+                                        <div class="col-md-2 col-sm-2 bold">Extern tid (tim)</div>
+                                        <div class="col-md-2 col-sm-2 bold">Övrigt (tkr)</div>
+                                        <div class="col-md-1 col-sm-1 bold">Summa (tkr)</div>
+                                        <div class="col-md-1 col-sm-1 bold" style="padding-left:10px;">Saldo (tkr)</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="row readOnly" ng-repeat="item in version.Data.FollowUp track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="col-md-3 col-sm-2 read readOnly">
+                                                <div class="textarea-container">
+                                                    {{item.Date | date:'yyyy-MM-dd'}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-3"><div class="textarea-container"><input type="text" ng-model="item.InternalHours" disabled /></div></div>
+                                            <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.ExternalHours" disabled /></div></div>
+                                            <div class="col-md-2 col-sm-2"><div class="textarea-container"><input type="text" ng-model="item.OtherCosts" disabled /></div></div>
+                                            <div class="col-md-1 col-sm-1"><div class="textarea-container">{{item.RowTotalCost}}</div></div>
+                                            <div class="col-md-1 col-sm-1"><div class="textarea-container"><input type="text" disabled ng-model="item.RowActivityTotal" /></div></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="col-md-6 col-sm-6 col-sm-offset-2 col-md-offset-3 ">
+                                                    <span class="bold">Kommentar:</span>
+                                                    <div class="textarea-container">
+                                                        <textarea enter rows="1" msd-elastic="\n" ng-model="item.comment" disabled></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- end followup-->
+                    <!-- Start debriefing-->
+                    <div class="row contentcell plan">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12 plan">
+                                    <h2>
+                                        8. Avrapportering
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="bleft row">
+                                    <label class="label-status" translate>Projektkommentar</label>
+                                    <div id="Debriefing" class="textarea-container">
+                                        <textarea rows="1" ng-blur="saveData('Debriefing', project.Debriefing)" msd-elastic="\n" ng-model="project.Debriefing" disabled></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End debriefing-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

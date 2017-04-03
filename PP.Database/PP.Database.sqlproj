@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PP.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{805cc1c3-c237-4ed7-a019-ac099103f167}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureDatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PP.Database</RootNamespace>
+    <AssemblyName>PP.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TargetDatabase>PP</TargetDatabase>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Views" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="Publish" />
+    <Folder Include="Types" />
+    <Folder Include="Data" />
+    <Folder Include="Functions" />
+    <Folder Include="Scripts" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="StoredProcedures\ValidateFormsUser.sql" />
+    <Build Include="Tables\Project.sql" />
+    <Build Include="Tables\ProjectActivity.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Settings.sql" />
+    <Build Include="Tables\ProjectArea.sql" />
+    <Build Include="Tables\ProjectRisk.sql" />
+    <Build Include="Tables\ProjectGoal.sql" />
+    <Build Include="Tables\ProjectFollowUp.sql" />
+    <Build Include="Tables\ProjectMember.sql" />
+    <Build Include="Tables\ProjectMemberRole.sql" />
+    <Build Include="Tables\ProjectRole.sql" />
+    <Build Include="Views\ProjectMemberView.sql" />
+    <Build Include="Tables\Organization.sql" />
+    <Build Include="Views\NewId.sql" />
+    <Build Include="Functions\GetRandom.sql" />
+    <Build Include="StoredProcedures\ValidateYammerUser.sql" />
+    <Build Include="StoredProcedures\CreateUser.sql" />
+    <Build Include="Scripts\DropTables.sql" />
+    <Build Include="StoredProcedures\GetProject.sql" />
+    <Build Include="Views\UserView.sql" />
+    <Build Include="Views\ProjectRoleView.sql" />
+    <Build Include="Tables\ProjectVersion.sql" />
+    <Build Include="Functions\OrganizationState.sql" />
+    <Build Include="Tables\ProjectFavorite.sql" />
+    <Build Include="StoredProcedures\GetProjects.sql" />
+    <Build Include="StoredProcedures\CreateProjectMember.sql" />
+    <Build Include="Functions\StringToIntTable.sql" />
+    <Build Include="StoredProcedures\DeleteProjectMember.sql" />
+    <Build Include="StoredProcedures\CreateProject.sql" />
+    <Build Include="Tables\Program.sql" />
+    <Build Include="Tables\ProjectRoleGroup.sql" />
+    <Build Include="Tables\ProjectComment.sql" />
+    <Build Include="Tables\ProjectCommentType.sql" />
+    <Build Include="Tables\Log.sql" />
+    <Build Include="Tables\ProjectRoleAdministration.sql" />
+    <Build Include="Functions\GetPasswordHash.sql" />
+    <Build Include="Tables\ProgramRoleAdministration.sql" />
+    <Build Include="StoredProcedures\ChangePassword.sql" />
+    <Build Include="StoredProcedures\ChangePasswordRequest.sql" />
+    <Build Include="Tables\ProjectCommentArea.sql" />
+    <Build Include="Views\CommentView.sql" />
+    <Build Include="Tables\ProjectCommentActivity.sql" />
+    <Build Include="StoredProcedures\GetUnreadProjectComments.sql" />
+    <Build Include="StoredProcedures\UpdateProjectCommentActivity.sql" />
+    <Build Include="StoredProcedures\CreateProjectComment.sql" />
+    <Build Include="StoredProcedures\GetProjectCommentTypes.sql" />
+    <Build Include="Tables\ProjectCommentTypePermission.sql" />
+    <Build Include="StoredProcedures\ValidateProjectName.sql" />
+    <Build Include="StoredProcedures\GetInActiveProjects.sql" />
+    <Build Include="Tables\Template.sql" />
+    <Build Include="StoredProcedures\UpdateProjectRoles.sql" />
+    <Build Include="Functions\IsAdmin.sql" />
+    <Build Include="StoredProcedures\Report01.sql" />
+    <Build Include="StoredProcedures\SearchUsers.sql" />
+    <Build Include="Functions\StringToStringTable.sql" />
+    <Build Include="Tables\Report.sql" />
+    <Build Include="Tables\ReportPermission.sql" />
+    <Build Include="StoredProcedures\GetReports.sql" />
+    <Build Include="StoredProcedures\ExecuteProcedure.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\DefaultData.sql" />
+    <None Include="Publish\projektplaneraren.bj862abxoe.publish.xml" />
+    <None Include="Publish\projektplaneraren.local.publish.xml" />
+    <None Include="Publish\projektplanerarendemo.vx1afqnpkq.publish.xml" />
+    <None Include="Publish\projektplaneraren.vx1afqnpkq.publish.xml" />
+    <None Include="Publish\projektplaneraren20.vx1afqnpkq.publish.xml" />
+    <None Include="Publish\projektplaneraren20.bj862abxoe.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="PP.Database.refactorlog" />
+  </ItemGroup>
+</Project>

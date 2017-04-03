@@ -1,0 +1,60 @@
+﻿	{ 
+		'Id': '1', 
+		'Name': 'Skolbudget',
+		'ProjectAreaId': '1',
+		'CreatedById': '1',
+		'StartDate': '2014-03-20',
+		'YammerGroup': 'PP2',
+		'Active': 'true',
+		'LastUpdate': '2014-03-11',
+		'CreatedDate': '2014-03-11',
+		'InternalCostPerHour': '900',
+		'ExternalCostPerHour': '1000',
+		'Phase': '1',
+		'OrganizationId': '1',
+		'FundingActual': '10',
+		'FundingStimulus': '20',
+		'FundingExternal': '30',
+		'Description': 'Beskrivning projekt skolbudget',
+		'PlanIntroductionBackground': 'Bakgrund till projetet och dess historia',
+		'PlanIntroductionDefinition': 'Projektdefinition som beskriver essensen i sammanhanget.',
+		'PlanIntroductionComments': 'Kommentara gärna!',
+		'PlanDescriptionExtent': 'Omfattningen av ett projekt.',
+		'PlanDescriptionDelimitation': 'Projektets avgränsningar i tid och rum.',
+		'PlanDescriptionManagement': 'Styrning',
+		'PlanDescriptionEvaluation': 'Konkludering',
+		'PlanImplementationDescription': 'Hur kommer genomgörandet att se ut?',
+		'PlanCommunicationInterestAnalysis': 'Analysera mera',
+		'PlanCommunicationDefinition': 'Kommunicera mera',
+		'PlanCommunicationPlan': 'Planera för kommunikation',
+		'PlanCommunicationPlan': 'Planera för kommunikation',
+		'ProjectMembers' : 
+		[
+			{'ProjectMemberId' : '1', 'UserName' : 'John', 'ProjectRoles' : ['2'],'UserEmail' : 'john@doe.com', 'County' : 'Malmö' },
+			{'ProjectMemberId' : '2', 'UserName' : 'Douglas', 'ProjectRoles' : ['2'], 'UserEmail' : 'douglas@home.com', 'County' : 'Landskrona' },
+			{'ProjectMemberId' : '3', 'UserName' : 'Matt', 'ProjectRoles' : ['2'],'UserEmail' : 'matt.damon@rocketmail.com', 'County' : 'Eslöv' }
+		],
+		'ProjectRisk':
+				[
+					{'Id': '15', 'ProjectId' : '554','Name' : 'Första risken', 'ProbabilityId': '3', 'ConsequenceId' : '3'},
+					{'Id': '16', 'ProjectId' : '555','Name' : 'Andra risken', 'ProbabilityId': '2', 'ConsequenceId' : '3'},	
+												
+				],	
+		'ProjectGoals':
+				[
+					{'Id': '15', 'ProjectId' : '554','Type': '1', 'Name' : 'Första målet', 'Achieved': '3', 'GoalDefinition' : 'Detta är min måldefinition','MesaureMethod':'Detta är mätmetoden'},	
+					{'Id': '16', 'ProjectId' : '555','Type': '2', 'Name' : 'Andra Målet', 'Achieved': '1', 'GoalDefinition' : 'Detta är min måldefinition','MesaureMethod':'Detta är mätmetoden'},							
+				],	
+		'ProjectActivities':
+				[
+					{'Id': '15', 'ProjectId' : '554','Name':'Första raden', 'Status' : '1', 'InternalHours': '10', 'ExternalHours' : '11','Cost':'12', 'Notes' : 'Detta är en kommentar' },
+					{'Id': '16', 'ProjectId' : '555','Name':'Andra raden', 'Status' : '0', 'InternalHours': '20', 'ExternalHours' : '21','Cost':'22', 'Notes' : 'Detta är en kommentar'},
+					{'Id': '17', 'ProjectId' : '556','Name':'Tredje raden', 'Status' : '1', 'InternalHours': '30', 'ExternalHours' : '31','Cost':'32', 'Notes' : 'Detta är en kommentar' }				
+				],
+		'ProjectFollowUps':
+				[
+					{'Id': '15', 'ProjectId' : '554','Date':'2014-03-03T00:00:00', 'FollowUpId' : '1','InternalHours': '10', 'ExternalHours' : '11','VariousCosts':'12', 'Notes' : 'Detta är en rad' },
+					{'Id': '16', 'ProjectId' : '555','Date':'2014-03-04T00:00:00', 'FollowUpId' : '1','InternalHours': '11', 'ExternalHours' : '12','VariousCosts':'13', 'Notes' : 'Detta är min kommentar' },
+					{'Id': '17', 'ProjectId' : '556','Date':'2014-03-05T00:00:00', 'FollowUpId' : '1','InternalHours': '14', 'ExternalHours' : '15','VariousCosts':'16', 'Notes' : 'Mer text' }				
+				],
+	}

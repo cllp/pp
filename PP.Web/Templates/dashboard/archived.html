@@ -1,0 +1,59 @@
+﻿<div ng-controller="AllprojectsController">
+    <div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-md-4 searchInput">
+                    <a ng-click="loadProjects = true;"> Hämta arkiverade projekt</a>
+                    <input type="text" class="form-control" ng-model="ArchivedSearchText" placeholder="Sök...">
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+            </div>
+            <div class="row projectlist" ng-if="loadProjects">
+                <div class="row ">
+                    <div class="col-md-1 col-sm-1"></div>
+                    <div class="row col-md-11 col-sm-11">
+                        <div class="col-md-3 col-sm-3 bold ">
+                            <span class="tableheader" ng-click="orderByField='Name'; reverseSort = !reverseSort">
+                                Namn
+                            </span>
+                        </div>
+                        <div class="col-md-3 col-sm-3 bold">
+                            <span class="tableheader" ng-click="orderByField='Area'; reverseSort = !reverseSort">
+                                Område
+                            </span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 bold">
+                            <span class="tableheader" ng-click="orderByField='Phase'; reverseSort = !reverseSort">
+                                Projektfas
+                            </span>
+
+                        </div>
+                        <div class="col-md-2 col-sm-2 bold">
+                            <span class="tableheader" ng-click="orderByField='Municipality'; reverseSort = !reverseSort">
+                                Kommun
+                            </span>
+                        </div>
+                        <div class="col-md-2 col-sm-2 bold">
+                            <span class="tableheader" ng-click="orderByField='County'; reverseSort = !reverseSort">
+                                Län
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row table-list" ng-repeat="item in projectView | orderBy:orderByField:reverseSort | filter: {Phase:'Arkiverad'} | filter: myFilter" ng-class="{'table-list-current': selectedProject(item), '': !selectedProject(item)}" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div class="col-md-1 col-sm-1"></div>
+                    <div class="col-md-11 col-sm-11 " ng-click="redirect(item.Id)" id="{{item.Name}}">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="textarea-container">{{item.Name}}</div>
+                        </div>
+                        <div class="col-md-3 col-sm-3"><div class="textarea-container">{{item.Area}}</div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.Phase}}</div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.Municipality}}</div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.County}}</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

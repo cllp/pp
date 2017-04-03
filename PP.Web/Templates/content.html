@@ -1,0 +1,27 @@
+<div class="row" style="z-index:100000; margin-bottom:15px;">
+    <div ng-if="!readOnly">
+        <div style="background: #7d0ae1; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+        <div style="background: #0bafec; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+        <div style="background: #f15a0b; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+    </div>
+    <div ng-if="readOnly">
+        <div style="background: #444444; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+        <div style="background: #858585; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+        <div style="background: #7F7F7F; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+    </div>
+</div>
+<div class="row">
+
+    <div>
+        <ng-include src="getTemplateUrl('navigation')" class="expanded-menu" />
+    </div>
+    
+    <div class="col-lg-8 contentview">
+        <ng-include src="getTemplateUrl('contentview')" />
+    </div>
+
+    <div class="col-lg-3" id="sidebar" ng-if="collapsed">
+        <ng-include src="getTemplateUrl('content/sidebar/mainsidebar')" />
+    </div>
+
+</div>

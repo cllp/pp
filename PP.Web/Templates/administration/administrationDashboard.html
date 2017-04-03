@@ -1,0 +1,22 @@
+﻿<div class="row" ng-controller="AdministratorController">
+<!-- <div class="row"> -->
+    <div class="col-lg-8" style="padding-left:0;">
+        <div class="row" style="z-index:100000;margin-bottom:15px;">
+            <div class="col-lg-4">
+                <div style="background: #7d0ae1; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+                <div style="background: #0bafec; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+                <div style="background: #f15a0b; height: 30px; width: 30px; float: left; margin: 0 2px;"></div>
+            </div>
+        </div>
+        <div class="dashboard contentview">
+            <div style="padding-bottom:20px;">
+                <h4>Välkommen {{loggedInUser.DisplayName}}</h4>
+            </div>
+            <div class="row">
+                <div ng-model="activeTab" bs-tabs="tabs">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>

@@ -1,0 +1,43 @@
+<div>
+        <!-- column div -->
+        <div class="col-lg-12">
+            
+            <!--  header row -->
+            <div class="row" ng-if="reports.length > 0">    
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-3 col-sm-3 bold"><span class="tableheader">Namn</span></div>
+                    <div class="col-md-9 col-sm-9 bold"><span class="tableheader">Beskrivning</span></div>
+                </div>
+            </div>
+
+            <!-- report item -->
+            <div class="row table-list" ng-repeat="report in reports" ng-click="getReport(report.Key)">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-3">{{report.Name}}</div>
+                    <div class="col-md-9">{{report.Description}}</div>
+                </div>
+            </div>
+
+            <div class="row" ng-if="reports.length < 1">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-12">Det finns inga tillgängliga rapporter</div>
+                </div>
+            </div>
+
+            <div class="row">
+                &nbsp;
+            </div>
+
+            <!-- report link -->
+            <div class="row" ng-if="currentReport != null">
+                <div class="col-md-12 col-sm-12">
+                    Klicka här för att ladda ner {{currentReport.Type}} rapporten
+                    <a href="{{currentReport.Url}}" target="_blank"> {{currentReport.Name}}</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="metadata sidebarScrollContent" id="metadata" ng-controller="MetadataController">
+    <div id="about" class="nano">
+        <div class="nano-content">
+            <div class="col-md-12">
+                <div ng-repeat="role in Roles">
+                    <h5 class="label-status metaList">
+                    {{role.Name}}
+                    <a ng-click="mailToRole(role)">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                    </a>
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="metaList" ng-repeat="member in Members | memberRoleFilter: {id: role.Id} track by $index ">
+                            <a href="mailto:{{member.Email}}?subject=Angående {{project.Name}}&body=Skriv ditt innehåll här.">{{member.Name}}</a>
+                            <small ng-if="member.Municipality">({{member.Municipality}})</small>
+                            <small ng-if="!member.Municipality">(Extern)</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

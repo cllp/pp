@@ -1,0 +1,47 @@
+﻿<span id="finansiering" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell finance">
+
+    <div class="col-lg-12">
+
+        <div class="row">
+            <div style="float:left;" class="col-lg-12 finance">
+                <h2>
+                    2. Finansiering
+                </h2>
+            </div>
+            <div class="toolbar-tab">
+                <a class="finance"><span ng-click="showToolbar('comments', 'finance')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="col-lg-2 col-sm-2">
+                    <div data-type="info" data-animation="am-fade-and-scale"> Uppskattat (tkr) </div>
+                    <div>
+                        <div class="textarea-container" >{{project.FundingEstimate}}</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    Egen finansiering (tkr)
+                    <div class="textarea-container" >{{project.FundingActual}}</div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    Extern finansiering (tk)
+                    <div class="textarea-container" >{{project.FundingExternal}}</div>
+                </div>
+
+                <div class="col-lg-2 col-sm-2" ng-if='rootscopeIsStimulusAuthorized'>
+                    Stimulansmedel (tkr)
+                    <div class="textarea-container" >{{project.FundingStimulus}}</div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    Ofinansierat (tkr)
+                    <div class="textarea-container"> {{rootscopeFunding.unfinanced}}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

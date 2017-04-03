@@ -1,0 +1,111 @@
+﻿<div class="contentcell">
+    <div class="col-lg-12">
+        <form name="Form">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="bleft row">
+                    <div class="col-sm-3 col-md-3">
+                        <span>
+                            <label class="label-status" translate>Namn</label>
+                        </span>
+                        <div mouseover class="textarea-container">
+                            <input type="text" name="projectName" ng-model="$parent.selectedUser.Name" required />
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <label class="label-status">E-post</label>
+                        <div mouseover class="textarea-container">
+                            <input type="text" name="projectName" ng-model="selectedUser.Email" required />
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <label class="label-status" translate>Organisation</label>
+                        <div class="textarea-container">
+                            {{userOrganization}}
+                        </div>
+                    </div>
+                    <!--<div class="col-sm-3 col-md-3">
+                        <label class="label-status" translate>Län</label>
+                        <div  class="textarea-container">
+                            <select ng-model="selectedUser.OrganizationId" ng-options="p.Id as p.Name for p in Organizations" disabled></select>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="bleft row">
+                    <div class="col-sm-3 col-md-3">
+                        <label class="label-status">Systemroll</label>
+                        <div mouseover class="textarea-container">
+                            <select ng-model="selectedUser.RoleId" name="programOwner" ng-required="requiredRoles.RequireProgramOwner" ng-options="p.Id as p.Name for p in systemroles"></select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bleft row">
+                    <div class="col-sm-4 col-md-4">
+                        <label class="label-status"></label>
+                        <div class="alert-danger" ng-hide="Form.$valid && submitted">
+                            <span style="display:block;" ng-show="submitted && Form.projectName.$error.required">Vänligen fyll i namn</span>
+                            <span style="display:block;" ng-show="submitted && Form.projectArea.$error.required">Vänligen välj område</span>
+                            <span style="display:block;" ng-show="submitted && Form.programOwner.$error.required">Vänligen välj programägare</span>
+                            <span style="display:block;" ng-show="submitted && Form.projectCoordinator.$error.required">Vänligen välj projektägare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+
+        <!--  --------------------------------------- -->
+
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-2 col-sm-2 bold">Program</div>
+                    <div class="col-md-2 col-sm-3 bold">Roll</div>
+                    <div class="col-md-3 col-sm-2 bold">Organisation</div>
+                    <div class="col-md-3 col-sm-2 bold" style="float:right;">Hantera</div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 tableView" id="member-table">
+                <div class="row" id="member{{$index}}" ng-repeat="item in userAdministrationRoleList track by $index" ng-class-odd="'odd'" ng-class-even="'even'">                    
+                    <div class="row col-md-12 col-sm-12">
+                        <div class="col-md-2 col-sm-2">
+                            <select ng-model="item.ProgramTypeId" ng-options="p.Id as p.Name for p in AllPrograms 
+                            | filter: { Id:'!6' }" ng-change="load()"></select>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2" style="display: none"><select ng-model="item.ProgramTypeId" ng-options="p.Id as p.Description for p in programTypes | filter:{Id:'!0'} "></select></div>
+
+                        <div class="col-md-2 col-sm-2">
+                            <select ng-model="item.ProjectRoleId" ng-options="p.Id as p.Name for p in AdminRoles"> </select>
+                        </div>
+
+                        <div class="col-md-3 col-sm-2">
+                            <select ng-if="item.ProgramTypeId == 2" ng-model="item.OrganizationId" ng-options="p.Id as p.County for p in countyList"> </select>
+                            <select ng-if="item.ProgramTypeId == 3" ng-model="item.OrganizationId" ng-options="p.Id as p.Name for p in Organizations"> </select>
+                        </div>
+
+                        <div class="col-md-3 col-sm-2" style="float:right; padding-left:27px;" ng-if="item.Saved">
+                            <button type="button" class="btn btn-link" ng-click="deleteRow($index)"><small>Ta bort</small></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="options">
+                        <button type="button" class="btn btn-link" ng-click="addRow()"><small>Lägg till ny roll</small></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="$hide(); saveUser('close')">Avbryt</button>
+        <button type="button" class="btn btn-primary" ng-click="$hide(); saveUser('save')">Spara</button>
+    </div>
+
+</div>
+
+
+

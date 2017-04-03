@@ -1,0 +1,90 @@
+<span id="aktivitet" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell activity">
+
+    <div class="col-lg-12">
+
+        <div class="row">
+            <div class="col-lg-12 activity">
+                <h2>
+                    6. Aktivitet
+                </h2>
+            </div>
+            <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+                <p ng-click="showHelpText('activity')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreambleActivity | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+            </div>
+            <div class="toolbar-tab">
+                <a class="activity"><span ng-click="showToolbar('comments', 'activity')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-2 col-sm-2 bold">Namn</div>
+                    <div class="col-md-2 col-sm-2 bold">Status</div>
+                    <div class="col-md-2 col-sm-2 bold">Intern tid (tim)</div>
+                    <div class="col-md-2 col-sm-2 bold">Extern tid (tim)</div>
+                    <div class="col-md-2 col-sm-2 bold">Övrigt (tkr)</div>
+                    <div class="col-md-2 col-sm-2 bold">Summa (tkr)</div>
+
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 tableView" id="activity-table">
+                <div class="row" id="activity{{$index}}" ng-repeat="item in project.Activity track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.Name" ng-change="enableSave(true, item)" /></div></div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="textarea-container" bordermouseover>
+                                <select ng-model="item.StatusId" ng-options="p.Id as p.Name for p in statusList" ng-change="enableSave(true, item)"> </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.InternalHours" ng-change="enableSave(true, item)" /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.ExternalHours" ng-change="enableSave(true, item)" /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.Cost" ng-change="enableSave(true, item)" /></div></div>
+                        <div class="col-md-2 col-sm-2"><div class="textarea-container">{{item.SummaryRow}}</div></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12" style="margin-top:4px;">
+                            <div class="col-md-7 col-sm-7 col-sm-offset-2 col-md-offset-2">
+                                <div class="textarea-container" bordermouseover>
+                                    <textarea enter rows="1" placeholder="Skriv kommentar..." msd-elastic="\n" ng-model="item.Notes" ng-change="enableSave(true, item)"></textarea>
+                                </div>
+                            </div>
+                            <div ng-show="!item.showSave" class="col-md-1 col-md-offset-1 col-sm-1"><button type="button" style="padding-left:3px" class="btn btn-link" ng-click="deleteRow($index)"><small>Ta bort</small></button></div>
+                            <div ng-show="item.showSave" class="col-md-1 col-md-offset-1 col-sm-1"><button type="button" style="padding-left:3px" class="btn btn-link" ng-click="saveRow($index)"><small>Spara</small></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="activity-result" class="col-md-12 col-sm-12 col-sm-offset-2 col-md-offset-2">
+                <div class="col-md-2 col-sm-2 bold pleft">
+                    Summa:
+                </div>
+                <div class="col-md-2 col-sm-2 bold" >
+                    {{project.Activity.SummaryInternalHours}}
+                </div>
+                <div class="col-md-2 col-sm-2 bold" >
+                    {{project.Activity.SummaryExternalHours}}
+                </div>
+                <div class="col-md-2 col-sm-2 bold" >
+                    {{project.Activity.SummaryCost }}
+                </div>
+                <div class="col-md-2 col-sm-2 bold">
+                    {{project.Activity.SummaryTotal}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="options">
+                        <button type="button" class="btn btn-link" ng-click="addRow()"><small>Lägg till ny aktivitet</small></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

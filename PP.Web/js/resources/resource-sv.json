@@ -1,0 +1,14 @@
+﻿{
+		"PROJECTIDEA_TITLE": "Projektidé",
+		"PROJECTIDEA_CREATEDBY": "Projektidé skapad av",
+		"PROJECTIDEA_RESPONSIBLEMUNICIPALITY": "Ansvarig kommun",
+		"PROJECTIDEA_AREA": "Område",
+		"PROJECTIDEA_NAME": "Namn",
+		"PROJECTIDEA_DESCRIPTION": "Beskrivning",
+		"PROJECTIDEA_PROJECTPHASE": "Projektfas",
+		"PROJECTIDEA_YAMMERGROUP": "Yammer-grupp",
+		"PROJECTIDEA_PLANNEDSTARTDATE": "Tänkt startdatum",
+		"PROJECTIDEA_VAL_PROJECTPHASE": "The field Projektfas must be a number.",
+		"PROJECTIDEA_VAL_REQ_PROJECTPHASE": "The Projektfas field is required."
+
+  }

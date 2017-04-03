@@ -1,0 +1,39 @@
+<div ng-repeat="module in modules">
+    <section id="{{module.Id}}" class="page">
+        <ng-include src="module.Url" controller="module.Controller" />
+    </section>
+</div>
+
+<!--
+<section id="projectidea" class="page">
+    <div ng-include src='"templates/content/projectidea.html"' ng-controller="ProjectideaController"></div>
+</section>
+<section id="finance" class="page">
+    <div ng-include src='"templates/content/finance.html"' ng-controller="FinanceController"></div>
+</section>
+
+
+<section id="participants" class="page">
+    <div ng-if="Memberedit==2" ng-include src='"templates/content/members.html"' ng-controller="MembersController">{{Memberedit}}</div>
+    <div ng-if="Memberedit!=2" ng-include src='"templates/readcontent/members.html"' ng-controller="MembersController">{{Memberedit}}</div>
+</section>
+
+
+<section id="projectplan" class="page">
+    <div ng-include src='"templates/content/plan.html"' ng-controller="PlanController"></div>
+
+</section>
+<section id="goals" class="page">
+    <div ng-include src='"templates/content/goal.html"' ng-controller="GoalController"></div>
+</section>
+<section id="activities" class="page">
+    <div ng-include src='"templates/content/activity.html"' ng-controller="ActivityController"></div>
+</section>
+<section id="followup" class="page">
+    <div ng-include src='"templates/content/followup.html"' ng-controller="FollowupController"></div>
+</section>
+<section id="debriefing" class="page">
+    <div ng-include src='"templates/content/debriefing.html"' ng-controller="DebriefingController"></div>
+</section>
+
+-->

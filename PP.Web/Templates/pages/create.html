@@ -1,0 +1,105 @@
+﻿<div class="vwrap">
+    <div class="col-md-8">
+    <a id="createProject" class="content-cell-head-anchor">&nbsp;</a>
+    <div ng-controller="CreateController">
+        <div class="contentview create">
+            <div class="col-lg-12 create">
+                <h1 class="big-heading">Nytt projekt</h1>
+            </div>
+            <div class=" row contentcell">
+                <div class="col-lg-12">
+                    <form name="Form">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="bleft row">
+                                <div class="col-sm-3 col-md-3">
+                                    <span>
+                                        <label class="label-status" translate>Namn</label>                                      
+                                    </span>
+                                    <div mouseover class="textarea-container">
+                                        <input type="text" name="projectName" ng-model="newProject.Name" required />
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-md-3">
+                                    <label class="label-status">Program</label>
+                                    <div mouseover class="textarea-container">
+                                        <select name="projectProgram" ng-model="newProject.ProgramId" required ng-options="p.Id as p.Name for p in Programs | filter:programFilter"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-md-3">
+                                    <label class="label-status" translate>Område</label>
+                                    <div mouseover class="textarea-container">
+                                        <select name="projectArea" ng-model="newProject.AreaId" required ng-options="p.Id as p.Name for p in selectedAreas | filter:projectAreaFilter"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-md-3">
+                                    <label class="label-status" translate> Ansvarig kommun</label>
+                                    <div mouseover class="textarea-container">
+                                        <select ng-model="newProject.OrganizationId" ng-options="p.Id as p.Name for p in Organizations"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3 col-md-offset-3" ng-hide="newProject.ProgramId == 6">
+                                    <label class="label-status">Programägare</label>
+                                    <div mouseover class="textarea-container">
+                                        <select ng-model="newProject.ProgramOwner" name="programOwner" ng-required="requiredRoles.RequireProgramOwner" ng-options="p.Id as p.Name for p in programOwners ">
+                                        </select>
+                                    </div>
+                                   
+                                </div>
+                                
+                                <div class="col-sm-3 col-md-3" ng-hide="newProject.ProgramId == 6">
+                                    <label class="label-status">Projektsamordnare</label>
+                                    <div mouseover class="textarea-container">
+                                        <select name="projectCoordinator" ng-required="requiredRoles.RequireProjectCoordinator" ng-model="newProject.ProjectCoordinator" ng-options="p.Id as p.Name for p in projectCoordinators"></select>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="bleft row">
+                                <div class="col-sm-12 col-md-12">
+                                    <label class="label-status" translate>Beskrivning</label>
+                                    <div mouseover class="textarea-container">
+                                        <textarea rows="1" msd-elastic="\n" ng-model="newProject.Description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bleft row">
+                                <div class="col-sm-3 col-md-3">
+                                    <label class="label-status" translate>Startdatum </label>
+                                    <div mouseover class="textarea-container">
+                                        <input type="text" class="form-control" show-weeks="false" show-button-bar="false" datepicker-popup="{{datePicker.format}}"
+                                               ng-model="newProject.StartDate" is-open="item.isopen" datepicker-options="datePicker.dateOptions" close-text="datePicker.Close" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-md-3">
+                                    <label class="label-status" translate>Projektidé skapad av</label>
+                                    <div class="textarea-container ">
+                                        {{newProject.CreatedBy}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-4">
+                                    <label class="label-status"></label>
+                                    <div class="alert-danger" ng-hide="Form.$valid && submitted">
+                                        <span style="display:block;" ng-show="submitted && Form.projectName.$error.required">Vänligen fyll i namn</span>
+                                        <span style="display:block;" ng-show="submitted && Form.projectArea.$error.required">Vänligen välj område</span>
+                                        <span style="display:block;" ng-show="submitted && Form.programOwner.$error.required">Vänligen välj programägare</span>
+                                        <span style="display:block;" ng-show="submitted && Form.projectCoordinator.$error.required">Vänligen välj projektägare</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="options">
+                            <button class="btn btn-orange" ng-click="createProject()" style="display: inline">Skapa projekt</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>

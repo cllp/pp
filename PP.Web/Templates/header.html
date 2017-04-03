@@ -1,0 +1,68 @@
+<a class="anchor" id="top"></a>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container header-container">
+        <div class="navbar-header home">
+            <div class="navbar-header">
+                <a ng-click="redirectToPage('dashboard');" class="navbar-brand">
+                    <i class="fa fa-home"></i>&nbsp;Start
+                </a>
+            </div>
+        </div>    
+        <div class="col-lg-8">
+
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav pull-right navbar-nav">
+                    <li>
+                        <a href="#/create"><i class="fa fa-adjust"></i>&nbsp;Skapa nytt projekt</a>
+                    </li>
+                    
+                    <li class="dropdown" ng-if="project.Id != null">
+                        <a class="dropdown-toggle ProjectTitle" data-toggle="dropdown" ng-click="redirect()">
+                            {{project.Name}}&nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            
+                            <li>
+                                <a ng-click="createPdfDraft(project.Id)">
+                                    <i class="glyphicon glyphicon-paperclip"></i> Skapa utkast
+                                </a>
+                            </li>
+
+                            <li ng-if="loggedInUser.RoleId == 1 || loggedInUser.RoleId == 2 || loggedInUser.RoleId == 3">
+                                <a data-template="templates/ConfirmDeleteProject.html" onclick="window.scrollTo(0, location.hash);" container="body" bs-modal="modal">
+                                    <i class="glyphicon glyphicon-remove"></i> Ta bort projekt
+                                </a>    
+                            </li>
+                        </ul>
+                    </li>
+                     
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user">
+                            <i class="fa fa-user"></i> {{loggedInUser.DisplayName}}&nbsp;<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li ng-if="loggedInUser.RoleId == 1 || loggedInUser.RoleId == 2 || loggedInUser.RoleId == 3">
+                                <a ng-click="redirectToPage('administration')">
+                                    <i class="glyphicon glyphicon-pencil"></i> Administration
+                                </a>
+                            </li>
+                            <li ng-if="loggedInUser.RoleId == 1 || loggedInUser.RoleId == 2 || loggedInUser.RoleId == 3" class="divider"></li>
+                            <li>
+                                <a href="javascript:void(0);" ng-click="signout()">
+                                    <i class="fa fa-sign-out"></i> Logga ut
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="cmt-alerts">
+            <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)" class="alerts">
+                {{alert.msg}} <br />
+                Tidpunkt: {{alert.time}}
+            </alert>
+        </div>
+    </div>
+</div>

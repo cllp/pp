@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Projektplaneraren</title>
+        <link href="./css/main.css" rel="stylesheet" />
+        <script type="text/javascript" data-app-id="8Zu4RhlOXiz8vuo0tBilQ" src="https://assets.yammer.com/assets/platform_js_sdk.js"></script>
+        <script type='text/javascript' src="js/settings.js"></script>
+        <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+        <script type='text/javascript' src="lib/jquery/jquery.validate.min.js"></script>
+        <script type='text/javascript' src="lib/jquery/jquery.xdomainrequest.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top"></div>
+        <div class="container main-container">
+            <div class="row" style="margin-top:70px;">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="col-md-12">
+                        <div style="padding-bottom:40px;">
+                            <div style="background: #7d0ae1; height: 30px; width: 30px; float: left; margin: 0 5px 0 0;"></div>
+                            <div style="background: #0bafec; height: 30px; width: 30px; float: left; margin: 0 5px 0 0;"></div>
+                            <div style="background: #f15a0b; height: 30px; width: 30px; float: left; margin: 0 5px 0 0;"></div>
+                            <div style="height: 30px;"><h3>Projektplaneraren</h3></div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">Projektplaneraren är ett verktyg för planering, genomförande och uppföljning av kommunala utvecklingsprojekt. Vill du veta mer om verktyget, klicka på "Hjälp" i menyn. Om du saknar inloggning kan du <a href="/register.html">klicka här</a> för att registrera dig.</div>
+                    <div class="col-md-10">
+                        <hr />
+                    </div>
+                    <div class="loginForm col-md-10">
+                        <div class="col-md-6 formBorder">
+                            <h4>Inloggning med Yammer</h4>
+                            <div class="yammerbutton">
+                                <span id="yammer-login"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="clickheader"> <h4>Inloggning med e-post</h4></div>
+                            <form id="loginform" role="form">
+                                <div class="form-group">
+                                    <label class="label-status">E-post</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Fyll i epost" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-status">Lösenord</label>
+                                    <input type="password" id="password" class="form-control" placeholder="Fyll i lösenord">
+                                </div>
+                                <div class="form-group">
+                                    <button id="formsSubmit" type="submit" class="btn btn-sm btn-primary pull-left">Logga in</button>
+                                </div>
+                            </form>
+                            &nbsp;
+                            <button class="btn btn-sm btn-default" onclick="RequestPasswordChange();">Glömt ditt lösenord?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+
+        var apiRoot = appConfig.apiUrl; //ApiUrl();
+
+        $("#loginform").validate({
+
+            // Specify the validation rules
+            rules: {
+                email: {
+                    minlength: 4,
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true
+                }
+            },
+
+            // Specify the validation error messages
+            messages: {
+                password: {
+                    required: "Vänligen fyll i lösenord"
+                },
+                email: {
+                    required: "Vänligen fyll i epostadress"
+                },
+                minlength: {
+                    required: "Vänligen fyll i epostadress"
+                },
+            }
+        });
+
+        function RequestPasswordChange() {
+            if ($("#loginform").valid()) {
+                console.log('Valid email');
+                var request = $.ajax({
+                    url: apiRoot + 'application/requestpasswordchange/',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    secureuri: false,
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        Email: $('#email').val(),
+                        Password: '',
+                        Key: '00000000-0000-0000-0000-000000000000',
+                        Url: appConfig.siteUrl
+                    },
+                    success: function(data, status) {
+                        if (data === 'False') {
+                            alert('Kontrollera återställningslänk, byte av lösenord ej genomfört');
+                        } else {
+                            alert('Ett e-postmeddelande med instruktioner för att skapa nytt lösenord har skickats. Om du inte får något meddelande så kan det bero på att det fastnat i ditt skräppostfilter eller att du inte har något konto på projektplaneraren.se.');
+                            window.location = '/';
+                        }
+                    },
+                    error: function(data, status, e) {
+                        if (data.status == 500) {
+                            alert('Ett e-postmeddelande med instruktioner för att skapa nytt lösenord har skickats. Om du inte får något meddelande så kan det bero på att det fastnat i ditt skräppostfilter eller att du inte har något konto på projektplaneraren.se.');
+                        }
+                    }
+                });
+            }
+        }
+
+        jQuery.extend(jQuery.validator.messages, {
+            required: "Obligatoriskt fält.",
+            email: "Vänligen fyll i giltig epostadress.",
+            minlength: "Vänligen fyll i fält"
+        });
+
+
+        $("#loginform").submit(function(e) {
+            e.preventDefault();
+
+            if ($("#loginform").valid()) {
+
+                var username = $('#email').val();
+                var password = $('#password').val();
+
+                $.ajax({
+                    url: apiRoot + 'token',
+                    secureuri: false,
+                    method: 'POST',
+                    dataType: 'json',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data: 'grant_type=password&username=' + username + '&password=' + password,                    
+                    success: function(data) {
+                        console.log(data);
+                        if (data.access_token.length > 0) {
+                            sessionStorage.setItem('token', data.access_token);
+                            window.location = '/app.html#/dashboard';
+                        }
+                    },
+                    error: function(data) {
+                        alert('Användarnamn eller lösenord ogiltigt.');
+                    }
+                })
+            }
+            return false;
+        });
+
+        yam.connect.loginButton('#yammer-login', function(resp) {
+
+            //console.log('init yammer login');
+            if (resp.authResponse) {
+
+                //console.log('yammer authenticating');
+                console.log(JSON.stringify(resp));
+
+                var token = resp.access_token.token;
+                var userid = resp.access_token.user_id;
+                console.log('token: ' + token + '. user_id: ' + userid);
+
+                sessionStorage.setItem('yammeruser', JSON.stringify(resp));
+                sessionStorage.setItem('username', token + ',' + userid); //resp.user.contact.email_addresses[0].address);
+                sessionStorage.setItem('password', 'yammer');
+
+                //window.location = 'loggedin.html';
+                window.location = '/app.html#/dashboard';
+            } else {
+                console.log('yammer not logged in');
+            }
+        });
+
+        function getCurrentYammerUser(token) {
+
+            yam.platform.request({
+                url: "https://www.yammer.com/api/v1/users.json", //this is one of many REST endpoints that are available
+                method: "GET",
+                success: function(user) { //print message response information to the console
+                    alert("The request was successful.");
+                    console.dir(user);
+                },
+                error: function(user) {
+                    alert("There was an error with the request.");
+                }
+            });
+        }
+    </script>
+
+
+</body>
+</html>

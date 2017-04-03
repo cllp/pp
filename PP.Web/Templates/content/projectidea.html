@@ -1,0 +1,88 @@
+<span id="projektide" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+<div class="row contentcell projectidea">
+    <div class="col-lg-12">
+        <div>
+            <h2>
+                <div bordermouseover id="Name" class="textarea-container">
+                    <input type="text" ng-blur="saveData('Name', project.Name)" ng-model="project.Name" />
+                </div>
+            </h2>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="bleft row">
+                <div class="col-sm-3 col-md-3">
+                    <label class="label-status">Program</label>
+                    <div class="textarea-container">
+                        {{project.Program.Name}}
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <label class="label-status">Projektområde</label>
+                    <div mouseover id="ProjectAreaId" class="textarea-container">
+                        <select ng-model="project.AreaId" ng-options="p.Id as p.Name for p in availableProjectAreas" ng-blur="saveData('ProjectAreaId', project.AreaId)"></select>
+                    </div>
+                </div>
+            <div class="col-sm-3 col-md-3">
+                <label class="label-status">Ansvarig kommun</label>
+                <div mouseover id="OrganizationId" class="textarea-container">
+                    <select ng-model="project.OrganizationId" ng-options="p.Id as p.Name for p in Organizations" ng-blur="saveData('OrganizationId', project.OrganizationId)"></select>
+                </div>
+            </div>
+        <div class="col-md-3">
+            <label class="label-status">Projektfas</label>
+            <div mouseover id="PhaseId" class="textarea-container">
+                <select ng-model="project.PhaseId" ng-blur="saveData('PhaseId', project.PhaseId)" ng-options="p.Id as p.Name for p in Phases"></select>
+            </div>
+        </div>
+
+</div>
+<div class="bleft row">
+    <div class="col-sm-3 col-md-3">
+        <label class="label-status">Projektidé skapad av</label>
+        <div class="textarea-container">
+            {{project.CreatedBy}}
+        </div>
+    </div>
+    <div class="col-sm-3 col-md-3">
+        <label class="label-status">Publicerad</label>
+        <div class="textarea-container">
+            {{publishDate}}
+        </div>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div style="float:left;" class="col-lg-12 projectidea">
+        <h2>
+        1. Projektidé
+        </h2>
+    </div>
+    <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+        <p ng-click="showHelpText('projectidea')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreambleProjectidea | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+    </div>
+    <div class="toolbar-tab">
+        <a class="projectidea"><span ng-click="showToolbar('comments', 'projectidea')"><i class="fa fa-comments-o title-icon"></i></span></a>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="bleft row">
+        <div class="col-sm-3 col-md-3">
+            <label class="label-status" translate>Startdatum </label>
+            <div mouseover id="StartDate" class="textarea-container">
+                <input type="text" show-weeks="true" show-button-bar="false" datepicker-popup="{{datePicker.format}}"
+                ng-blur="saveData('StartDate', project.StartDate)" ng-model="project.StartDate" is-open="datePicker.opened" datepicker-options="datePicker.dateOptions" close-text="datePicker.Close" />
+            </div>
+        </div>
+        <a id="projektide-scrollspy">&nbsp;</a>
+    </div>
+    <div class="bleft row">
+        <div class="col-sm-12 col-md-12">
+            <label class="label-status" translate>Beskrivning </label>
+            <div mouseover id="Description" class="textarea-container">
+                <textarea rows="1" ng-blur="saveData('Description', project.Description)" msd-elastic="\n" ng-model="project.Description"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Projektplaneraren</title>
+        <link href="./css/main.css" rel="stylesheet" />
+        <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+        <script type='text/javascript' src="lib/jquery/jquery.validate.min.js"></script>
+        <script type='text/javascript' src="lib/jquery/jquery.xdomainrequest.min.js"></script>
+        <script type='text/javascript' src="js/settings.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top"></div>
+        <div class="container main-container">
+            <div class="row" style="margin-top:70px;">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="col-md-12">
+                        <div style="padding-bottom:40px;">
+                            <div style="background: #7d0ae1; height: 30px; width: 30px; float: left; margin: 0 5px 0 0"></div>
+                            <div style="background: #0bafec; height: 30px; width: 30px; float: left; margin: 0 5px 0 0; "></div>
+                            <div style="background: #f15a0b; height: 30px; width: 30px; float: left; margin: 0 5px 0 0; "></div>
+                            <div style="height: 30px;"><h3>Projektplaneraren</h3></div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">Projektplaneraren är ett verktyg för planering, genomförande och uppföljning av kommunala utvecklingsprojekt. Vill du veta mer om verktyget, klicka på "Hjälp" i menyn. Om du saknar inloggning, kontakta din kommunsamordnare inom eHälsa.</div>
+                    <div class="col-md-10">
+                        <hr />
+                    </div>
+                    <div class="loginForm col-md-10">
+                      <div class="clickheader"> <h4>Registrera ny användare </h4></div>
+                      <form id="loginform" role="form">
+                          <div class="form-group">
+                              <label class="label-status">E-post</label>
+                              <input type="email" id="email" class="form-control" placeholder="Fyll i epost" required>
+                              <button id="formsSubmit" type="submit" class="btn btn-default" style="margin-top:5px;">Registrera</button>
+                          </div>
+                      </form>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    <script>    
+       var apiRoot = appConfig.ApiUrl;
+
+       $("#loginform").validate({
+
+         // Specify the validation rules
+         rules: {
+           email: {
+             minlength: 4,
+             required: true,
+             email: true
+           }
+         },
+
+         // Specify the validation error messages
+         messages: {
+           email: {
+             required: "Vänligen fyll i epostadress"
+           },
+           minlength: {
+             required: "Vänligen fyll i epostadress"
+           },
+         }
+       });
+
+       jQuery.extend(jQuery.validator.messages, {
+         required: "Obligatoriskt fält.",
+         email: "Vänligen fyll i giltig epostadress.",
+         minlength: "Vänligen fyll i fält"
+       });
+
+
+       $("#formsSubmit").on('click', function(e) {
+
+         var email = $('#email').val();
+
+         if (email.length > 0) {
+           $.ajax({
+             url: apiRoot + 'account/register/',
+             secureuri: false,
+             method: 'POST',
+             dataType: 'json',
+             headers: {
+               'Content-Type': 'application/x-www-form-urlencoded'
+             },
+             data: {
+               Email: email
+             },
+             success: function(data) {
+               console.log(data.IsRegistered);
+               console.log(data.Password);
+               alert('Användaren är registrerad.');
+             },
+             error: function(data) {
+               alert('Registreringen misslyckades. Kontrollera att epostdomänen motsvarar en befintlig organisation och att epostadressen inte redan är registrerad.');
+             }
+           })
+         }
+         return false;
+       });
+    </script>    
+</html>

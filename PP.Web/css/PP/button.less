@@ -1,0 +1,48 @@
+﻿@import "base";
+
+.btn-orange.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-orange {
+  display: none;
+  color: #ffffff;
+  background-color: #f15a0b;
+  background-repeat: repeat-x;
+  border-color: #e0490a #e0490a #d03809;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff15a0b', endColorstr='#ffe0490a', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  .text-shadow(0 -1px 0, rgba(0, 0, 0, 0.25));
+  .linear-gradient(top, #f15a0b, #e0490a);
+}
+
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange.active,
+.btn-orange.disabled,
+.btn-orange[disabled] {
+  color: #ffffff;
+  background-color: #e0490a;
+}
+
+.btn-orange:active,
+.btn-orange.active {
+  background-color: #c02708 \9;
+}
+
+.btn-orange img {
+    display: none;
+    float: right;
+}
+
+@media only screen and (max-width: 960px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    .btn-orange{
+        width: inherit;
+    }
+}

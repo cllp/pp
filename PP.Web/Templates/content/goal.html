@@ -1,0 +1,77 @@
+<span id="malgoal" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell goal">
+
+    <div class="col-lg-12">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>
+                    5. Mål
+                </h2>
+            </div>
+            <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+                <p ng-click="showHelpText('goal')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreambleGoal | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+            </div>
+            <div class="toolbar-tab">
+                <a class="members"><span ng-click="showToolbar('comments', 'members')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-1 col-md-offset-11 col-sm-offset-10 col-sm-2 bold">Hantera</div>
+                </div>
+            </div>
+            <div id="goal-table" class="col-md-12 col-sm-12 tableView">
+                <div class="row" id="goal{{$index}}" ng-repeat="item in project.Goals track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div>
+                        <div class="col-md-3 col-sm-2">
+                            <span class="bold">Måltyp</span>
+                            <div class="textarea-container" bordermouseover>
+                                <select ng-model="item.Type" ng-options="p.id as p.name for p in goalType" ng-change="enableSave(true, item)"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2">
+                            <span class="bold">Uppnått</span>
+                            <div class="textarea-container" bordermouseover>
+                                <select ng-model="item.Achieved" ng-options="p.id as p.name for p in goalAchieved" ng-change="enableSave(true, item)"></select>
+                            </div>
+                        </div>
+                        <div ng-show="!item.showSave" class="col-md-1 col-md-offset-5 col-sm-offset-4 col-sm-2"><button type="button" class="btn btn-link" ng-click="deleteRow($index)"><small>Ta bort</small></button></div>
+                        <div ng-show="item.showSave" class="col-md-1 col-md-offset-5 col-sm-offset-4 col-sm-2"><button type="button" class="btn btn-link" ng-click="saveRow($index)"><small>Spara</small></button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="col-md-7 col-sm-7 col-sm-offset-2 col-md-offset-3">
+                                <span class="bold">Målformulering:</span>
+                                <div class="textarea-container" bordermouseover>
+                                    <textarea enter rows="1" msd-elastic="\n" ng-model="item.GoalDefinition" ng-change="enableSave(true, item)"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-7 col-sm-7 col-sm-offset-2 col-md-offset-3">
+                                <span class="bold">Mätmetod: </span>
+                                <div class="textarea-container" bordermouseover>
+                                    <textarea enter rows="1" msd-elastic="\n" ng-model="item.MesaureMethod" ng-change="enableSave(true, item)"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="options">
+                        <button type="button" class="btn btn-link" ng-click="addRow()"><small>Lägg till nytt mål</small></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

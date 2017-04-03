@@ -1,0 +1,209 @@
+﻿Id;Organization;Name;ProjectArea;InternalCost;ExternalCost;OtherCost;TotalCost;Stimulus;Owner;Leader
+24;Kommunförbundet Skåne;Axel test;> administration;1192500;0;250000;1442000;0;;
+25;Kommunförbundet Skåne;12 - Information på 1177;eTjänster för invånarna;1860000;0;40000;1900000;0;Niclas Bendroth Clausenborg;
+28;Ale;Systemtest;eTjänster för invånarna;0;0;0;0;0;;
+30;Ale;Projektnamn saknas;eTjänster för invånarna;0;0;0;0;0;Karin Bengtsson;
+33;Ale;Projektnamn saknas;eTjänster för invånarna;0;0;0;0;0;Anette Bolinder;
+35;Södertälje;Mobilt stöd i Södertälje;mobil dokumentation;25000;0;770000;795000;0;Gilda Johansson;
+36;Västkom; Test e-Hälsa projekt;> administration;0;0;0;0;0;Christina Wisser;
+37;Solna;Införande av NPÖ i Solna Stad;införande NPÖ-konsument;121000;103000;0;224000;0;Iréne Kallin;
+38;Järfälla;Tidmätning i hemtjänsten;mobil dokumentation;351500;586000;0;937000;0;Jenny Wilhelmsson;Therese Thorell
+39;Stockholm;Filip R Test idé - Projektplan NPÖ;införande NPÖ-konsument;165500;15000;180500000;180680000;0;Filip Rydman;
+43;Västkom;14 - Västkom eHälsa 2013 huvudprojekt;> administration;5050000;250000;0;5300000;0;Karl Fors;
+44;Sollentuna;Sollentuna Jämförelser Fritt Val;eTjänster för invånarna;180000;0;91000000;91180000;0;Kristina Brismark;Marianne Carlberger
+46;Södertälje;NPÖ i Södertälje;införande NPÖ-konsument;174000;15000;186500000;186689000;0;Gilda Johansson;Lisa Mattsson
+49;Österåker;E-tjänster i Österåkers kommun;eTjänster för invånarna;160000;40000;200000000;200200000;0;Sara Eriksson;
+50;Österåker;Digitala trygghetslarm i Österåkers kommun;digitala trygghetslarm;175000;85000;260000;520000;0;Sara Eriksson;
+52;Nacka;Digital nyckelhantering inom hemtjänsten i Nacka kommun;eTjänster för invånarna;358000;228000;472000000;472586000;0;Anne-Lie Söderlund;Gabriella Nyhäll
+53;Sundbyberg;Införande av NPÖ i Sundbybergs stad;införande NPÖ-konsument;97500;0;43000;140000;0;Birgitta Fahlgren Sylvén;Ida Bäckström
+54;Salem;Införande av NPÖ i Salem;införande NPÖ-konsument;86000;20000;43000;149000;0;Tove Bergek;
+55;Salem;eTjänster för invånarna;eTjänster för invånarna;46500;0;10000;56000;0;Tove Bergek;
+57;Stockholm;Mobilt stöd i Stockholm stad;mobil dokumentation;2380000;0;0;2380000;0;Eva Frunk Lind;Marita Åkersten
+58;Lomma;1262 NPÖ Införande i Lomma kommun;införande NPÖ-konsument;260000;0;63000;323000;87000;Lotta Widén Odder;
+59;Stockholm;Införande av NPÖ i Stockholm stad;införande NPÖ-konsument;200000;0;0;200000;0;AnnMarie Ståhl;
+60;Stockholm;Digitala trygghetslarm/ GSM larm   i Stockholm stad;digitala trygghetslarm;250000;0;250000;500000;0;Marianne Silven-Hedenström;
+61;Salem;Övergång till digitala trygghetslarm;digitala trygghetslarm;66000;10000;0;76000;0;Tove Bergek;
+62;Sundbyberg;Digitala trygghetslarm i Sundbybergs stad;digitala trygghetslarm;65000;90000;0;155000;0;Birgitta Fahlgren Sylvén;Ida Bäckström
+63;Haninge;Övergång till digitala trygghetslarm i Haninge kommun;digitala trygghetslarm;0;0;0;0;0;Ewa Kardell;Madeleine Carlström
+65;Hörby;1266 Hörby Säker inloggning- dokumentation;Säker roll- och behörighetsidentifikation;69000;6000;20000;95000;50000;Rebecca Martinsson;
+66;Landskrona;1282 Kartläggning av nuvarande behörighetsidentifikation och framtagande av en plan för hur en ökad mobil använding ska vara säker;Säker roll- och behörighetsidentifikation;25000;0;1000;26000;12000;Eva Klang Vänerklint;
+67;Täby;Täby Test av enheter lämpliga för mobil dokumentation;eTjänster för invånarna;251000;20000;321000;592000;0;Susanna Kiesel;Kristina Molander
+71;Landskrona;1282 Upphandling av digital larmhantering för ordinärt boende.;digitala trygghetslarm;122000;96000;0;218000;91000;Eva Klang Vänerklint;Fredrik Rehnqvist Müller
+72;Landskrona;1282 mobil dokumentation för ssk;mobil dokumentation;40000;0;40000;80000;40000;Eva Klang Vänerklint;
+73;Trelleborg;1287 - Trelleborg anslutning till NPÖ;införande NPÖ-konsument;312500;0;169000;481000;153000;Peter Lövgren;Marie Bergholtz
+74;Botkyrka;Införande av NPÖ i Botkyrka kommun;införande NPÖ-konsument;176500;15000;15000000;15191000;0;Pamela Olave;
+76;Täby;Öka användningen av SITHS kort för säker inloggning och hantering av medborgarens personuppgifter;Säker roll- och behörighetsidentifikation;625000;0;625000;1250000;0;Susanna Kiesel;Russel Green
+78;Landskrona;1282 läkemedelsapp;mobil dokumentation;0;0;0;0;0;Eva Klang Vänerklint;Liselott Lindskog
+79;Landskrona;1282 NPÖ;införande NPÖ-konsument;570000;100000;0;670000;153000;Eva Klang Vänerklint;Ulf Fredriksson
+80;Danderyd;E-hälsa 2013 Danderyd;> administration;435000;0;0;435000;0;tenbrott1fÅsalie Forsström;
+88;Kommunförbundet Skåne;1200 - Kvalitetssäkring SITHS/HSA;Säker roll- och behörighetsidentifikation;81000;0;0;81000;0;Niclas Bendroth Clausenborg;
+92;Solna;Planeringsystem för hemtjänsten med mobilt arbetssätt;mobil dokumentation;260000;243000;330000;833000;0;Paulina Terävä;Susanna Landström
+93;Nynäshamn;Nynäshamn Införande NPÖ;införande NPÖ-konsument;130000;20000;149000;299000;0;Kerstin Palomäki;Simon Lindgren
+94;Lidingö;Införande av NPÖ i Lidingö stad;införande NPÖ-konsument;228000;0;235500000;235728000;0;mikaela. schmidt;
+95;Nynäshamn;Mobilt stöd i HTJ Nynäshamn;mobil dokumentation;202500;16000;219000;437000;0;Kerstin Palomäki;Simon Lindgren
+96;Nynäshamn;Nynäshamn e-hemtjänst;eTjänster för invånarna;150000;0;150000;300000;0;Kerstin Palomäki;Simon Lindgren
+97;Västkom;1403-Mobilitet;mobil dokumentation;260500;438000;2000;700000;0;Karl Fors;Sara Åsman
+98;Lidingö;eFormulär med digital signering;eTjänster för invånarna;72500;0;72500000;72572000;0;mikaela. schmidt;
+99;Västkom;1405-NPÖ;eTjänster för invånarna;0;0;896000;896000;0;Karl Fors;
+100;Nacka;Införande av NPÖ i Nacka;införande NPÖ-konsument;256000;40000;300500000;300796000;0;Anne-Lie Söderlund;Anna-Lena Möllstam
+101;Lidingö;Lidingö Omsorgsappen;eTjänster för invånarna;21500;0;21500000;21521000;0;mikaela. schmidt;
+102;Täby;Täby Närvarostöd i socialpsykiatrin;eTjänster för invånarna;76500;0;132000;208000;0;Linda Junker;Kjell Gunnarsson
+103;Värmdö;Införande av NPÖ i Värmdö kommun;införande NPÖ-konsument;219000;23000;40000;282000;0;Kenneth Norberg;Maria Olsborn
+104;Landskrona;1282 Mobil dokumentation myndigheten;mobil dokumentation;202000;20000;0;222000;90000;Eva Klang Vänerklint;Liselott Lindskog
+105;Landskrona;1282 Uppgradera hemsidan för att kunna anpassa till eTjänster bla ansökningsmöjligheter;eTjänster för invånarna;154000;10000;164000;328000;82000;Eva Klang Vänerklint;Elizabeth Auinger
+106;Landskrona;1282 E-blankett;eTjänster för invånarna;0;0;0;0;0;Eva Klang Vänerklint;Fredrik Rehnqvist Müller
+107;Landskrona;1282 Hand-Tag app;eTjänster för invånarna;20000;0;20000;40000;10000;Eva Klang Vänerklint;Elizabeth Auinger
+108;Landskrona;1282 Digitaliserat kvalitetssäkringssystem;mobil dokumentation;495000;215000;0;710000;525000;Eva Klang Vänerklint;Gina Klint
+109;Landskrona;1282 Mobilt verksamhetssystem;mobil dokumentation;4095000;320000;80000;4495000;185000;Eva Klang Vänerklint;Liselott Lindskog
+110;Upplands Väsby;Upplands Väsby;digitala trygghetslarm;73500;3000;0;76000;0;Helena Bonnevier;
+111;Norrtälje;NPÖ Norrtälje kommun;införande NPÖ-konsument;152000;79000;267000000;267231000;0;Cristine Dahlbom-Nygren;Viveka Söderbärg Åhs
+113;Kommunförbundet Skåne;12 - NPÖ Skånes kommuner konsument;införande NPÖ-konsument;280000;0;0;280000;0;Thomas Wester;
+114;Huddinge;NPÖ i Huddinge kommun;införande NPÖ-konsument;205000;15000;221000;441000;0;Krook Marianne;Ring Christina
+115;Täby;Täby Trygg övergång till digitala trygghetslarm;digitala trygghetslarm;47500;70000;170000;287000;0;Linda Junker;
+116;Täby;Täby Vårdplanering med videoteknik;eTjänster för invånarna;40000;0;42000;82000;0;Susanna Kiesel;
+117;Upplands-Bro;Upplands-Bro NPÖ;införande NPÖ-konsument;190000;0;190000000;190190000;0;lena bergström;
+119;Hässleholm;1293 Mobil Hemtjänst;mobil dokumentation;7000;8000;0;15000;22000;Maria Olsson;Pia Persson
+120;Värmdö;Värmdö Öka antalet e-tjänster inom socialtjänsten;eTjänster för invånarna;128000;144000;0;272000;0;Ylva Sjögren;
+121;Malmö;1280 - Malmö-Nyckelfrihemtjänst;Säker roll- och behörighetsidentifikation;220000;180000;0;400000;200000;Per Lövgren;Björn Sassler
+122;Skövde;140201-Säker behörighet;Säker roll- och behörighetsidentifikation;0;0;0;0;0;Nilsson Maria;Jimmy Palmqvist
+123;Landskrona;1282 Digitalt nyckelhanteringssystem;Säker roll- och behörighetsidentifikation;223000;4000;180000;407000;80000;Eva Klang Vänerklint;Hazbije Dizdarevic
+124;Trollhättan;140101 - eHemtjänst Munkedal;eTjänster för invånarna;205500;0;0;205000;0;Ingrid Svensson;Marianne Brattberg
+125;Landskrona;Införande av elektroniska samordnade individuella planer;> administration;20000;0;0;20000;0;Eva Bergh;
+126;Tyresö;NPÖ-konsument Tyresö;införande NPÖ-konsument;215000;0;232000000;232215000;0;Björn Nilsson;
+127;Trollhättan;140102 - eHemtjänst Trollhättan;eTjänster för invånarna;882500;0;57000;939000;0;Siv Torstensson;Marianne Brattberg
+128;Ekerö;E-tjänster medborgare i Ekerö;eTjänster för invånarna;90000;60000;0;150000;0;lena burman johansson;
+129;Ängelholm;1292Care Optimizer;> administration;90000;70000;360000;520000;0;David Latifpour;Mona Ringh
+130;Klippan;Mobil dokumentation för brukaren;mobil dokumentation;100000;0;0;100000;50000;Patrik Vilhelmsson;
+131;Lidköping;140103 - IT-teknikcoach;eTjänster för invånarna;280000;0;10000;290000;0;Siv Torstensson;Linda Legendi
+133;Kävlinge;1261 - E-tjänster Socialtjänsten;eTjänster för invånarna;30000;0;0;30000;15000;Åsa Holmqvist;Anna-Lena Alnerud
+134;Kävlinge;1261 - Hemtjänstplanering på webben med inbyggd resursoptimering och ruttoptimering;mobil dokumentation;109500;21000;0;130000;0;Åsa Holmqvist;Anita Frick
+135;Kävlinge;1261 - NPÖ anslutning Kävlinge;införande NPÖ-konsument;202000;0;27000;229000;114000;Åsa Holmqvist;Camilla Kindahl
+136;Kävlinge;1261 - SITHS kort inloggning till Procapita;Säker roll- och behörighetsidentifikation;69000;0;40000;109000;55000;Åsa Holmqvist;Camilla Kindahl
+137;Osby;1273 e-Läkemedelsmodul Osby;mobil dokumentation;223000;24000;279000;526000;100000;Helena Ståhl;Andriette Näslund
+138;Vellinge;1233-e-tjänster;eTjänster för invånarna;57500;40000;0;97000;50000;Pernilla Hedin;
+139;Simrishamn;1291 Mobilt stöd i Simrishamn;mobil dokumentation;616000;0;0;616000;50000;Susanne Larsen Ingfeldt;
+140;Osby;1273 SITHS - säker inloggning i Alfa Omsorg 2000;Säker roll- och behörighetsidentifikation;24000;2000;95000;121000;40000;Johnny Kvarnhammar;
+141;Perstorp;1275 NPÖ införande konsument i Perstorps kommun;införande NPÖ-konsument;132000;15000;0;147000;47000;Zenita Böcker;
+142;Båstad;1278 eTjänster;eTjänster för invånarna;50000;50000;0;100000;0;Gunilla Johanson;
+143;Båstad;1278 Helhetslösning;mobil dokumentation;200000;10000;104000;314000;80000;Gunilla Johanson;
+144;Kristianstad;1290 Mobilt stöd i hemtjänsten;mobil dokumentation;213000;104000;0;317000;150000;Per Danebjer;Marianne Röjestål
+145;Bromölla;1272 - NPÖ-konsument Bromölla kommun;införande NPÖ-konsument;230000;10000;46000;286000;62000;Helena Andersson;
+146;Landskrona;1282 e möte;mobil dokumentation;0;0;0;0;0;Eva Klang Vänerklint;
+147;Bollebygd;CLLP Test 2;eTjänster för invånarna;8500;24000;1122000;1154000;0;Jan Forsman;sdfs
+148;Sjöbo;1265 e-Läkemedelsmodul Sjöbo;mobil dokumentation;34000;0;0;34000;17000;Cecilia Perry;Maria Mårtensson
+149;Höör;Införande av NPÖ i Höörs kommun;införande NPÖ-konsument;165000;20000;0;185000;72000;Marie Kjellberg;
+150;Kristianstad;1290 NPÖ Konsument;införande NPÖ-konsument;547500;35000;0;582000;266000;Per Danebjer;
+151;Hörby;1266 Hörby Mobilitet i hemtjänsten;mobil dokumentation;427500;405000;180000;1012000;30000;Rebecca Martinsson;
+152;Hörby;1266 Hörby E-tjänster;eTjänster för invånarna;244000;24000;60000;328000;0;Rebecca Martinsson;
+153;Hörby;1266 Införande av NPÖ;införande NPÖ-konsument;212500;20000;25000;257000;70000;Rebecca Martinsson;
+154;Lund;1281 NPÖ - Införande i Lunds kommun;införande NPÖ-konsument;680500;0;43000;723000;362000;Linda Svensson;
+155;Sjöbo;1265-Anslutning till NPÖ Sjöbo;införande NPÖ-konsument;188000;10000;63000;261000;80000;Cecilia Perry;Paulina Hallgren
+156;Skurup;1264 Införande av NPÖ konsument;införande NPÖ-konsument;167500;10000;43000;220000;70000;Eva Toft;Rickard Flodfält
+157;Ängelholm;1292 Införande av NPÖ i Ängelholm;införande NPÖ-konsument;390000;0;20000;410000;145000;David Latifpour;Lena Lundvall
+158;Svedala;1263 Införande av NPÖ i Svedala kommun;införande NPÖ-konsument;160000;15000;0;175000;83000;Anita Persson;
+159;Vellinge;1233-NPÖ-Vellinge;införande NPÖ-konsument;210500;20000;36000;266000;126000;Pernilla Hedin;
+160;Eslöv;1285 NPÖ i Eslövs kommun;införande NPÖ-konsument;260000;0;70000;330000;121000;Anna Fremner;
+161;Eslöv;1285 Eslöv Myndighetsenheten;mobil dokumentation;74000;0;0;74000;0;Anna Fremner;
+162;Eslöv;1285 Eslövskommun;Säker roll- och behörighetsidentifikation;30000;0;0;30000;0;Anna Fremner;
+163;Eslöv;1285 Eslöv legitimerad personal;mobil dokumentation;100000;0;0;100000;0;Anna Fremner;
+164;Hässleholm;1293 NPÖ Konsument Hässleholm;införande NPÖ-konsument;225000;0;0;225000;176000;Maria Olsson;Lotta Tyrberg
+165;Malmö;1280 Malmö NPO konsument;införande NPÖ-konsument;380000;20000;0;400000;200000;Per Lövgren;Pia Nilsson
+166;Bjuv;1260 NPÖ konsument Bjuv;införande NPÖ-konsument;184500;15000;26000;225000;70000;Maria Johnsson;
+167;Simrishamn;1291-NPÖ Simrishamn;införande NPÖ-konsument;196500;50000;0;246000;83000;Susanne Larsen Ingfeldt;
+168;Tomelilla;1270 NPÖ i Tomelilla kommun;införande NPÖ-konsument;196000;8000;47000;251000;65000;Jonny Larsson;
+170;Sigtuna;Digitala trygghetslarm i Sigtuna kommun;digitala trygghetslarm;240000;60000;300000;600000;0;Jan Hellström;Sara Rahm Pernold
+171;Sigtuna;Mobil dokumentation i Sigtuna kommun;mobil dokumentation;100000;40000;140000;280000;0;Jan Hellström;Sara Rahm Pernold
+172;Osby;1273 NPÖ Konsument Osby kommun;införande NPÖ-konsument;171000;0;50000;221000;63000;Johnny Kvarnhammar;Andriette Näslund
+176;Västkom;test inför möte;> administration;17500;25000;0;42000;0;Ingrid Svensson;
+177;Nacka;Digital tidmätning inom hemtjänsten i Nacka kommun;eTjänster för invånarna;331000;89000;100000000;100420000;0;Anne-Lie Söderlund;Carina Smith
+178;Ale;12 - Trygghetslarm kartläggning;digitala trygghetslarm;25000;0;0;25000;25000;Niclas Bendroth Clausenborg;
+179;Upplands Väsby;Införande av nytt verksamhetsstöd;Säker roll- och behörighetsidentifikation;560000;0;560000000;560560000;0;Helena Bonnevier;
+184;Landskrona;1282 Mobilt upprättad genomförandeplan;Mobilt arbete;122500;0;122000;244000;0;Susanne Arvidsson;Hazbije Dizdarevic
+185;Landskrona;1282 Videokonferens;Mobilt arbete;0;0;0;0;0;Susanne Arvidsson;Liselott Lindskog
+186;Åmål;e-tjänster för socialtjänsten;eTjänster för invånarna;0;0;0;0;0;Karl Fors;
+189;Västkom;e-tjänsteplattform för socialtjänsten;eTjänster för invånarna;50000;10000;10000000;10060000;0;Karl Fors;
+190;Höör;1267 Höör NPÖ uppföljning;NPÖ;80000;0;0;80000;0;Marie Kjellberg;
+191;Helsingborg;14 1283 Internetcafe;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Jessica Alfredson Ahlbom;Gerth Hellstrand
+193;Trelleborg;1287 Trelleborg Utvecklingsprojekt – Säkerhet och service;Trygghet service och delaktighet i hemmet;825000;0;0;825000;0;Roger Granat;Mikael Karlsson
+194;Landskrona;1282 mobil signering av läkemedel;Mobilt arbete;0;0;0;0;0;Susanne Arvidsson;Stefan Segerman
+195;Hörby;TA BORT2014 1266 Mobilitet i hemtjänsten;mobil dokumentation;0;0;0;0;0;Rebecca Martinsson;
+198;Lomma;2014 1262 NPÖ Grunda för producentrollen;NPÖ;60000;0;0;60000;0;Maria Förander;
+1201;Svedala;1263 Svedala Implementering/uppföljning av NPÖ;NPÖ;57500;0;0;57000;0;Joakim Thuresson;
+1203;Svedala;1263 Svedala Mobil dokumentation;Mobilt arbete;0;0;0;0;0;Joakim Thuresson;
+1204;Kävlinge;1261 Mobilitet för hemsjukvård;Mobilt arbete;0;0;0;0;0;Åsa Holmqvist;
+1205;Kävlinge;1261 Förvaltning och utveckling av konsumentroll i NPÖ;NPÖ;0;0;0;0;0;Åsa Holmqvist;
+1207;Kävlinge;1261 Mobil dokumentation för LSS-handläggare;Mobilt arbete;0;0;0;0;0;Åsa Holmqvist;
+1209;Vellinge;1233 NPÖ;NPÖ;15000;0;0;15000;0;Pernilla Hedin;Karin Silfverbrand
+1210;Ängelholm;1292 Care Optimizer;Mobilt arbete;0;0;0;0;0;David Latifpour;
+1211;Lomma;2014 1262 NPÖ användning;NPÖ;0;0;0;0;0;Maria Förander;
+1213;Kommunförbundet Skåne;1200 Öka användning NPÖ;NPÖ;0;0;0;0;0;Ottie Andersson;
+1218;Simrishamn;1291 Mobilt stöd i Simrishamn;Mobilt arbete;616000;0;0;616000;0;Susanne Larsen Ingfeldt;
+1219;Bjuv;2014 1260 Nyckelfri hemtjänst;Trygghet service och delaktighet i hemmet;17500;6000;0;23000;0;Anna Hallenheim;
+1220;Perstorp;2014  1275 NPÖ-uppföljning;NPÖ;0;0;0;0;0;Eva Björk;Annika Wihlborg
+1221;Perstorp;2014  1275 Mobil signering av läkemedelsadm;Mobilt arbete;0;0;0;0;0;Eva Björk;
+1222;Perstorp;2014  1275 Mobil dokumentation;Mobilt arbete;0;0;0;0;0;Eva Björk;
+1223;Helsingborg;14 1283 Mobil dokumentation för HSL-personal;Mobilt arbete;0;0;0;0;0;Jessica Alfredson Ahlbom;
+1224;Helsingborg;14 1283 NPÖ Konsument;NPÖ;0;0;0;0;0;Jessica Alfredson Ahlbom;Eva Gudmundsson
+1225;Helsingborg;14 1283 Appar för ökad delaktighet;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Jessica Alfredson Ahlbom;
+1227;Hässleholm;2014 1293 Videokonferens Hässleholm;Mobilt arbete;0;0;0;0;0;Maria Olsson;
+1228;Hässleholm;2014 1293 NPÖ Grunda för producentrollen Hässleholm;NPÖ;0;0;0;0;0;Maria Olsson;
+1231;Osby;2014-1273 Digital teknik i det sociala innehållet;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Kenneth Lindhe;Lena Johansson
+1239;Lund;14 1281 - Tillsyn via kamera Lunds kommun;Trygghet service och delaktighet i hemmet;110000;0;1000;111000;0;Linda Svensson;Lisa Jönsson
+2226;Simrishamn;2014 1291-NPÖ Simrishamn;NPÖ;196500;0;0;196000;0;Elisabeth Rubin;
+2227;Lund;14 1281 - Mobil dokumentation för handläggare Lunds kommun;Mobilt arbete;72000;0;0;72000;0;Linda Svensson;Helen Meyer
+2230;Höör;1267 NPÖ-grunda för producentrollen;NPÖ;32000;0;0;32000;8000000;Marie Kjellberg;
+2231;Höör;1267 Mobil Hemtjänst;Mobilt arbete;0;0;0;0;0;Cathrin Möller;Kent Andersson
+2235;Ängelholm;2014 1292 Integrerad ICT inom eHälsa;Mobilt arbete;0;0;0;0;0;Sergio Gray;
+2237;Ängelholm;20141292 NPÖ producent;NPÖ;0;0;0;0;0;David Latifpour;
+2238;Hörby;2014 1266 Mobil hemtjänst;Mobilt arbete;21500;14000;12515000;12550000;0;Rebecca Martinsson;
+2240;Kommunförbundet Skåne;2014 12 NPÖ konsument införandestöd till kommuner;NPÖ;5000;0;0;5000;0;Ottie Andersson;
+2241;Lund;14 1281 - Tillsyn nattetid till brukare med epilepsi Lunds kommun;Trygghet service och delaktighet i hemmet;49500;0;16000;65000;0;Linda Svensson;
+2242;Landskrona;1282 mobil dokumentation inom säbo;Mobilt arbete;355500;0;0;355000;0;Eva Klang Vänerklint;Kinga Hansen Rataj
+2243;Landskrona;1282 Nattro;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Eva Klang Vänerklint;Fredrik Rehnqvist Müller
+2244;Landskrona;1282 Digitalt planeringssytem;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Eva Klang Vänerklint;Mikael.kramer@landskrona.se
+2248;Ale;xx;Säker roll- och behörighetsidentifikation;0;0;0;0;0;Susanne Arvidsson;
+2249;Landskrona;1282 förkorta handläggningstid hjälpmedel och BAP;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Eva Klang Vänerklint;ulrika Hjort
+2250;Landskrona;1282 Mobil dokumentation ssk;Mobilt arbete;0;0;0;0;0;Eva Klang Vänerklint;margareta Seglert
+2252;Landskrona;1282 Digitalt planeringssystem;Mobilt arbete;0;0;0;0;0;Eva Klang Vänerklint;
+2254;Helsingborg;RADERAS!;eTjänster för invånarna;0;0;0;0;0;Jessica Alfredson Ahlbom;
+2255;Malmö;1280 Malmö Nyckelfri hemtjänst (fas 2);Trygghet service och delaktighet i hemmet;0;0;0;0;0;Per Lövgren;
+2256;Malmö;1280 Malmö NPÖ fortsättning från test till produktion;NPÖ;0;0;0;0;0;Per Lövgren;
+2257;Malmö;1280 Malmö Mobilt arbetssätt Införande;Mobilt arbete;0;0;0;0;0;Per Lövgren;
+2258;Malmö;1280 Malmö - Välfärdsteknologier i Hemmet;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Per Lövgren;
+2259;Höganäs;1284 NPÖ Införande i Höganäs kommun;införande NPÖ-konsument;15000;0;43000;58000;0;Johan Holmer;Anne-Lie Larsson
+2262;Landskrona;1282 Införande av nationellt behovsinriktat och sys-tematiskt arbetssätt gällande dokumentation. ÄBIC;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Susanne Arvidsson;
+3258;Ystad;1286 Införande av NPÖ konsument;NPÖ;0;0;0;0;0;Roger Nordström;Ingrid Mårtensson
+3259;Östra Göinge;1256 NPÖ införande Östra Göinge kommun;införande NPÖ-konsument;6000;0;31000;37000;0;roger wåhlin;
+3260;Landskrona;1282 skapa internetcafé på säbo för seniorer;Trygghet service och delaktighet i hemmet;70000;25000;0;95000;0;Susanne Arvidsson;Kinga Hansen Rataj
+3262;Kommunförbundet Skåne;12 Handlingsplan Trygghetskoncept KFSK;Trygghet service och delaktighet i hemmet;80000;0;0;80000;0;Thomas Wester;
+3265;Svalöv;Införande av NPÖ i Svalövs kommun;NPÖ;27500;0;15000000;15027000;0;Susanne Rosenström;Christina Hansson
+3266;Eslöv;1285 E-tjänster för invånarna;Trygghet service och delaktighet i hemmet;10000;0;0;10000;0;Anna Fremner;
+3267;Eslöv;1285 Digitala trygghetslarm;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Ann-Britt Lind;
+3268;Eslöv;1285-Mobilitet hemtjänst;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Paul Schwarzkopf;
+3269;Eslöv;1285-Mobilitet hemsjukvård;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Anna Fremner;Eva Bergh
+3270;Eslöv;1285-Handlingsplan trygghetskoncept Eslöv;Trygghet service och delaktighet i hemmet;80000;0;0;80000;0;Anna Fremner;
+3271;Trelleborg;1287 Handlingsplan Trygghetskoncept;Trygghet service och delaktighet i hemmet;80000;0;0;80000;0;Peter Lövgren;
+3273;Östra Göinge;1256 Handlingsplan Trygghetskoncept;Trygghet service och delaktighet i hemmet;80000;0;0;80000;0;roger wåhlin;
+3274;Skurup;1264 Skurup Digital informationstavla;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Agneta Westling;
+3275;Hörby;2014 1266 Mobilitet i socialtjänsten;Mobilt arbete;10500;0;55000000;55010000;0;Rebecca Martinsson;
+3276;Lund;14 1281 - Mobil dokumentation för sjuksköterskor Lunds kommun;Mobilt arbete;152500;0;0;152000;0;Veronica Welin;
+3277;Staffanstorp;NPÖ;införande NPÖ-konsument;0;0;0;0;0;Margaret Fritz;
+3278;Staffanstorp;Upppdrag som kommunsamordnare;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Margaret Fritz;
+3279;Hässleholm;1293- E-tjänster inon IFO - ek.bist;eTjänster för invånarna;0;0;0;0;0;Maria Johansson;
+3280;Hässleholm;1293- E-tjänster inom IFO-rådgivning via internet;eTjänster för invånarna;0;0;0;0;0;Maria Johansson;
+3281;Skurup;1264 Skurups kommun;Mobilt arbete;0;0;0;0;0;Anna-Lena Fällman;
+3282;Skurup;1264 Skurup kommun;eTjänster för invånarna;0;0;0;0;0;Anna-Lena Fällman;
+3285;Båstad;1278 Handlingsplan Trygghetskoncept Båstads kommun;Trygghet service och delaktighet i hemmet;80000;0;0;80000;0;Gunilla Johanson;
+3286;Höganäs;1284 Handlingsplan Trygghetskoncept KFSK;Trygghet service och delaktighet i hemmet;0;0;0;0;0;Hedvig Klippenbock;
+3287;Hässleholm;1293 E-tjänster inom IFO -Inspelad information;eTjänster för invånarna;0;0;0;0;0;Maria Johansson;
+3288;Hässleholm;1293 E-tjänser inom IFO Alk T;eTjänster för invånarna;0;0;0;0;0;Maria Johansson;
+3289;Hässleholm;1293 E-tjänster Tolkservice;eTjänster för invånarna;0;0;0;0;0;Maria Johansson;
+3290;Stretch;MMTEST;Mobilt arbete;45000;90000;90000;225000;0;Mikael Möregårdh;Testing some name
+3294;Ale;26 Aug 2014;Mobilt arbete;10000;20000;20000;50000;0;Laila;Mikael
+3295;Stretch;15e Sept 14;NPÖ;20000;30000;40000;90000;0;Mikael Möregårdh;
+3310;Tidaholm;Resultat;NPÖ;2500;100000;100000;202000;0;;
+3313;Stretch;Diskussionstestet;Mobilt arbete;0;40000;40000;80000;0;TestUser01;
+3321;Kommunförbundet Skåne;kreativt;Mobilt arbete;3389000;565000;0;3954000;0;Niclas Bendroth Clausenborg;
+3322;Trelleborg;Svalövs hemliga projekt;införande NPÖ-konsument;78000;123000;156000;357000;0;Test9_Svalov;
+3324;Lund;Test1Lund - testa användning av NPÖ;NPÖ;155000;35000;14000;204000;0;Test1_Lund;
+3330;Stretch;Releasetest 9 Dec;Mobilt arbete;5000;10000;10000;25000;0;Mikael Möregårdh;Test3_Lund

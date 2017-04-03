@@ -1,0 +1,54 @@
+<div style="" class="versions" ng-controller="CommentController">
+
+    <div>
+        <div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="comments-container">
+                        <div class="left"><a ng-click="previousArea();" class="fa fa-chevron-left"></a></div>
+                        <div class="right"><a ng-click="nextArea();" class="fa fa-chevron-right"></a></div>
+                        <div class="center"><b>{{currentArea.AreaId}}. {{currentArea.Area}}</b></div>
+                    </div>
+                    <div class="comment-dots-container">
+                        <div class="dot"
+                        ng-repeat="area in areas"
+                        ng-class="{'hascomments': area.UnRead, 'nocomments': !(area.UnRead)}">
+                            <a class="fa fa-circle-o" ng-if="area.AreaId != currentArea.AreaId" ng-click="changeArea(area);"></a>
+                            <i class="fa fa-circle" ng-if="area.AreaId == currentArea.AreaId"></i>
+                        </div>
+                    </div>
+                    <div class="sidebarScrollContent" style="padding-right:15px;">
+                        <div class="nano has-scrollbar">
+                            <div class="nano-content">
+                                <div ng-repeat="comment in currentComments | orderBy: 'Date'">
+                                    <div ng-show="comment.TypeId == currentType.TypeId">
+                                        <div ng-class="{'bubble me': comment.MyComment, 'bubble you': !comment.MyComment, 'bubble you unread': !comment.MyComment && comment.UnRead}">
+                                            <div class="body">{{comment.Text}}</div>
+                                            <div class="meta pull-left">
+                                                <small>av <span class="autor">{{comment.Writer}}</span><span class="date">{{comment.Date | date:"dd/MM/yy 'kl.' HH:mm"}}</span></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="comment-inputDiv">
+                                    <div class="comment-inputField-divider"></div>
+                                    <form name="commentForm" novalidate>
+                                        <div class="comment-inputField">
+                                            <textarea name="comment" rows="1" msd-elastic="\n" ng-model="comment.Text" placeholder="Skriv din kommentar här och tryck på &#x23ce;-tangenten för att kommentera." ng-keyup="CreateComment(comment, $event)" ng-minlength="3" ng-maxlength="2000" required/>
+                                        </div>
+                                        <span class="error" ng-show="commentForm.comment.$error.minlength">
+                                          Kommentaren måste vara minst tre tecken.</span><br>
+                                        <span class="error" ng-show="commentForm.comment.$error.maxlength">
+                                          Kommentaren får max vara 2000 tecken.</span><br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,55 @@
+<span id="medlemmar" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell members">
+
+    <div class="col-lg-12">
+
+        <div class="row">
+            <div class="col-lg-12 members">
+                <h2>
+                    3. Medlemmar
+                </h2>
+            </div>
+            <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+                <p ng-click="showHelpText('members')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreambleMembers | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+            </div>
+            <div class="toolbar-tab">
+                <a class="members"><span ng-click="showToolbar('comments', 'members')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-3 col-sm-3 bold">Namn</div>
+                    <div class="col-md-6 col-sm-6 bold">Roll</div>
+                    <div class="col-md-3 col-sm-3 bold">Kommun</div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 tableView" id="member-table">
+                <div class="row" id="member{{$index}}" ng-repeat="item in project.Members track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                   
+
+                    <div class="col-md-3 col-sm-3"><a data-template="templates/content/newmember.html" container="body" bs-modal="modal" ng-click="editMember(item)">{{item.Name}}</a></div>
+                    <div class="col-md-6 col-sm-6">
+                        <span ng-repeat="role in item.MemberRoles">{{role.Name}}&nbsp;</span>
+                    </div>
+                    <div class="col-md-3 col-sm-3">{{item.Municipality}}</div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="options">
+                        <!--<button type="button" class="btn btn-link" ng-click="addRow()"><small>Lägg till ny medlem</small></button>-->
+
+                        <button type="button" id="newMemberButton" class="btn btn-link" data-template="templates/content/newmember.html" container="body" bs-modal="modal" ng-click="resetSearchMember()">Lägg till ny medlem</button>
+
+                        <!--<button ng-click="showNewMember()">ADD</button>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------------------------------- -->
+    </div>
+</div>

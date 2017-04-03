@@ -1,0 +1,159 @@
+<span id="plan" class="anchorcontent content-cell-head-anchor">&nbsp;</span>
+
+<div class="row contentcell plan">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12 plan">
+                <h2>
+                    4. Projektplan
+                </h2>
+            </div>
+            <div class="col-md-10 col-sm-10 helptext" style="font-style: italic">
+                <p ng-click="showHelpText('plan')" data-template="templates/helptext.html" container="body" bs-modal="modal">{{helpTextPreamblePlan | limitTo:helpTextNumLimit}} <a>läs mer...</a> </p>
+            </div>
+            <div class="toolbar-tab">
+                <a class="plan"><span ng-click="showToolbar('comments', 'plan')"><i class="fa fa-comments-o title-icon"></i></span></a>
+            </div>
+        </div>
+        <div class="col-lg-12">
+        <div class="row">
+
+            <section id="projectplan_introduction">
+                <div class="row">
+                    <h3>Introduktion</h3>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Bakgrund och syfte</label>
+                    <div mouseover id="PlanIntroductionBackground" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanIntroductionBackground', project.IntroductionBackground)" msd-elastic="\n" ng-model="project.IntroductionBackground"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Definitioner</label>
+                    <div mouseover id="PlanIntroductionDefinition" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanIntroductionDefinition', project.IntroductionDefinition)" msd-elastic="\n" ng-model="project.IntroductionDefinition"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Övriga kommentarer</label>
+                    <div mouseover id="PlanIntroductionComments" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanIntroductionComments', project.IntroductionComments)" msd-elastic="\n" ng-model="project.IntroductionComments"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_description">
+                <div class="row">
+                    <h3>Beskrivning</h3>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Omfattning</label>
+                    <div mouseover id="PlanDescriptionExtent" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanDescriptionExtent', project.DescriptionExtent)" msd-elastic="\n" ng-model="project.DescriptionExtent"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Avgränsning</label>
+                    <div mouseover id="PlanDescriptionDelimitation" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanDescriptionDelimitation', project.DescriptionDelimitation)" msd-elastic="\n" ng-model="project.DescriptionDelimitation"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Förvaltning och Drift</label>
+                    <div mouseover id="PlanDescriptionManagement" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanDescriptionManagement', project.DescriptionManagement)" msd-elastic="\n" ng-model="project.DescriptionManagement"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Avslutning och Utvärdering</label>
+                    <div mouseover id="PlanDescriptionEvaluation" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanDescriptionEvaluation', project.DescriptionEvaluation)" msd-elastic="\n" ng-model="project.DescriptionEvaluation"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_implementation">
+                <div class="row">
+                    <h3>Genomförande</h3>
+                </div>
+
+                <div class="row">
+                    <label class="label-status" translate>Genomförande</label>
+                    <div mouseover id="PlanImplementationDescription" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanImplementationDescription', project.ImplementationDescription)" msd-elastic="\n" ng-model="project.ImplementationDescription"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_communication">
+                <div class="row">
+                    <h3>Kommunikation</h3>
+                </div>
+
+                <div class="row">
+                    <label class="label-status" translate>Intressentanalys</label>
+                    <div mouseover id="PlanCommunicationInterestAnalysis" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanCommunicationInterestAnalysis', project.CommunicationInterestAnalysis)" msd-elastic="\n" ng-model="project.CommunicationInterestAnalysis"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Kommunikationsplan</label>
+                    <div mouseover id="PlanCommunicationPlan" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanCommunicationPlan', project.CommunicationPlan)" msd-elastic="\n" ng-model="project.CommunicationPlan"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="label-status" translate>Övriga kommentarer</label>
+                    <div mouseover id="PlanCommunicationDefinition" class="textarea-container">
+                        <textarea rows="1" ng-blur="saveData('PlanCommunicationDefinition', project.CommunicationDefinition)" msd-elastic="\n" ng-model="project.CommunicationDefinition"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectplan_riskassessment">
+                <div class="row">
+                    <h3>Riskanalys</h3>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="col-md-3 col-sm-3 bold">Namn</div>
+                            <div class="col-md-2 col-sm-2 bold">Sannolikhet</div>
+                            <div class="col-md-2 col-sm-2 bold">Konsekvens</div>
+                            <div class="col-md-3 col-sm-3 bold">Påverkan/Riskpoäng</div>
+                            <div class="col-md-1 col-md-offset-1 col-sm-1 bold">Hantera</div>
+                        </div>
+                    </div>
+                    <div id="riskassessment-table" class="col-md-12 col-sm-12 tableView">
+                        <div class="row" id="risk{{$index}}" ng-repeat="item in project.Risks track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+                            <div ng-model="item">
+                                <div class="col-md-3 col-sm-3"><div class="textarea-container" bordermouseover><input type="text" ng-model="item.Name" ng-change="enableSave(true, item)" /></div></div>
+                                <div class="col-md-2 col-sm-2">
+                                    <div class="textarea-container" bordermouseover>
+                                        <select ng-model="item.ProbabilityId" ng-options="p.id as p.name for p in probability" ng-change="enableSave(true, item)"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <div class="textarea-container" bordermouseover>
+                                        <select ng-model="item.ConsequenceId" ng-options="p.id as p.name for p in consequence" ng-change="enableSave(true, item)"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3"><div class="textarea-container"><label class="bold">{{item.Effect}}</label></div></div>
+                                <div ng-show="!item.showSave" ng-class="" class="col-md-1 col-md-offset-1 col-sm-1"><p><button type="button" class="btn btn-link" ng-click="deleteRow($index)"><small>Ta bort</small></button></p></div>
+                                <div ng-show="item.showSave" class="col-md-1 col-md-offset-1 col-sm-1"><p><button type="button" class="btn btn-link" ng-click="saveRow($index)"><small>Spara</small></button></p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="options">
+                                <button type="button" class="btn btn-link" ng-click="addRow()"><small>Lägg till risk</small></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+</div>
